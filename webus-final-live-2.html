@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Webus — Premium Web Agency | High-Converting Websites</title>
+<meta name="description" content="Webus builds high-converting websites for businesses worldwide. Fast delivery, premium design, real results. Based in Bangladesh, serving globally."/>
+<meta name="keywords" content="web agency, website design, Bangladesh, international, high-converting websites"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.2/babel.min.js"></script>
+<style>
+/* ════════════════════════════════════════════
+   WEBUS FINAL — Light Blue + Coral Palette
+   Primary:   #E8736B (Coral — from Fuji sky)
+   Accent:    #D4574A (Deep crimson)
+   Blue-1:    #EBF4FF (Very light blue bg)
+   Blue-2:    #DBEAFE (Light blue surface)
+   Blue-3:    #BFDBFE (Medium light blue)
+   Blue-4:    #93C5FD (Soft blue accent)
+   Blue-dark: #1E40AF (Deep blue for text)
+   Blue-mid:  #3B82F6 (Medium blue)
+   Ink:       #1E293B (Dark text)
+════════════════════════════════════════════ */
+:root{
+  --coral:#E8736B;
+  --crimson:#D4574A;
+  --bg:#EBF4FF;
+  --surface:#F0F7FF;
+  --card:#FFFFFF;
+  --blue1:#EBF4FF;
+  --blue2:#DBEAFE;
+  --blue3:#BFDBFE;
+  --blue4:#93C5FD;
+  --bluemid:#3B82F6;
+  --bluedark:#1E40AF;
+  --ink:#1E293B;
+  --mid:#475569;
+  --light:#94A3B8;
+  --border:#C3DAFE;
+  --shadow:0 4px 24px rgba(59,130,246,0.1);
+  --shadow-lg:0 12px 48px rgba(59,130,246,0.16);
+  --r:16px;--rsm:10px;--rlg:24px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden;}
+h1,h2,h3,h4{font-family:'Outfit',sans-serif;}
+::-webkit-scrollbar{width:5px;}
+::-webkit-scrollbar-track{background:var(--blue2);}
+::-webkit-scrollbar-thumb{background:linear-gradient(var(--crimson),var(--coral));border-radius:3px;}
+
+/* GRADIENT TEXT */
+.gt{background:linear-gradient(135deg,var(--crimson),var(--coral));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.gtb{background:linear-gradient(135deg,var(--bluemid),var(--bluedark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+
+/* BUTTONS */
+.bp{background:linear-gradient(135deg,var(--crimson),var(--coral));color:#fff;font-family:'Outfit',sans-serif;font-weight:700;border:none;cursor:pointer;transition:all .28s;box-shadow:0 4px 18px rgba(212,87,74,.3);}
+.bp:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(212,87,74,.45);}
+.bb{background:linear-gradient(135deg,var(--bluemid),var(--bluedark));color:#fff;font-family:'Outfit',sans-serif;font-weight:700;border:none;cursor:pointer;transition:all .28s;box-shadow:0 4px 18px rgba(59,130,246,.25);}
+.bb:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(59,130,246,.4);}
+.bo{background:transparent;border:2px solid var(--coral);color:var(--coral);font-family:'Outfit',sans-serif;font-weight:600;cursor:pointer;transition:all .28s;}
+.bo:hover{background:var(--coral);color:#fff;transform:translateY(-2px);}
+.bob{background:transparent;border:2px solid var(--bluemid);color:var(--bluemid);font-family:'Outfit',sans-serif;font-weight:600;cursor:pointer;transition:all .28s;}
+.bob:hover{background:var(--bluemid);color:#fff;transform:translateY(-2px);}
+.bw{background:#fff;color:var(--crimson);font-family:'Outfit',sans-serif;font-weight:700;border:none;cursor:pointer;transition:all .28s;box-shadow:0 4px 16px rgba(0,0,0,.1);}
+.bw:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.15);}
+
+/* CARDS */
+.card{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);border:1px solid var(--border);transition:all .3s;}
+.card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);}
+.gc{background:rgba(255,255,255,.82);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.7);border-radius:var(--rlg);box-shadow:0 8px 32px rgba(59,130,246,.08),inset 0 1px 0 rgba(255,255,255,.9);transition:all .35s;}
+.gc:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(59,130,246,.14),inset 0 1px 0 rgba(255,255,255,.95);}
+
+/* SECTION TAG */
+.stag{display:inline-flex;align-items:center;gap:7px;background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.25);color:var(--bluemid);border-radius:999px;padding:5px 16px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-family:'DM Sans',sans-serif;font-weight:600;}
+
+/* INPUTS */
+input,textarea,select{background:#fff;border:1.5px solid var(--border);border-radius:var(--rsm);padding:12px 16px;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:14px;outline:none;width:100%;transition:border .2s,box-shadow .2s;box-shadow:0 2px 8px rgba(59,130,246,.06);}
+input:focus,textarea:focus,select:focus{border-color:var(--bluemid);box-shadow:0 0 0 3px rgba(59,130,246,.12);}
+input::placeholder,textarea::placeholder{color:var(--light);}
+select option{color:var(--ink);background:#fff;}
+label{font-size:13px;font-weight:600;color:var(--mid);margin-bottom:6px;display:block;}
+
+/* FADE IN */
+.fi{opacity:0;transform:translateY(28px);transition:all .7s ease;}
+.fi.vis{opacity:1;transform:none;}
+
+/* DASHBOARD */
+.dc{background:#fff;border-radius:var(--r);border:1px solid var(--border);box-shadow:0 2px 12px rgba(59,130,246,.07);padding:22px;}
+.si{display:flex;align-items:center;gap:12px;padding:11px 16px;border-radius:10px;cursor:pointer;transition:all .2s;font-size:14px;font-weight:500;color:var(--mid);}
+.si:hover{background:rgba(59,130,246,.07);color:var(--bluemid);}
+.si.act{background:rgba(59,130,246,.1);color:var(--bluemid);font-weight:700;border-left:3px solid var(--bluemid);}
+.sb{border-radius:999px;padding:3px 12px;font-size:11px;font-weight:700;font-family:'DM Sans',sans-serif;}
+
+/* ANIMATIONS */
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes float2{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-8px) rotate(1deg)}}
+@keyframes glow-coral{0%,100%{box-shadow:0 0 18px rgba(212,87,74,.3)}50%{box-shadow:0 0 38px rgba(212,87,74,.6)}}
+@keyframes glow-blue{0%,100%{box-shadow:0 0 18px rgba(59,130,246,.25)}50%{box-shadow:0 0 38px rgba(59,130,246,.5)}}
+@keyframes spin-s{to{transform:rotate(360deg)}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+@keyframes wglow{0%,100%{box-shadow:0 0 18px rgba(37,211,102,.4)}50%{box-shadow:0 0 36px rgba(37,211,102,.7)}}
+@keyframes sc-in{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:scale(1)}}
+@keyframes fu{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes drift{0%{transform:translateY(0) translateX(0);opacity:.7}100%{transform:translateY(-90px) translateX(var(--dx,20px));opacity:0}}
+@keyframes pulse-ring{0%{transform:scale(1);opacity:.6}100%{transform:scale(2.2);opacity:0}}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .hm{display:none!important;}
+  .g2{grid-template-columns:1fr!important;}
+  .g3{grid-template-columns:1fr!important;}
+  .g4{grid-template-columns:1fr 1fr!important;}
+}
+</style>
+</head>
+<body><div id="root"></div>
+<script type="text/babel">
+const {useState,useEffect,useRef,useCallback,createContext,useContext}=React;
+
+/* ═══ AUTH — with real credentials ═══ */
+const AuthCtx=createContext(null);
+const USERS=[
+  {email:"nazmulhasanramim123@gmail.com",password:"@#৳%&*-+@",role:"admin",name:"Nazmul Hasan Ramim"},
+  {email:"client@demo.com",password:"client123",role:"client",name:"Rahim Uddin",cid:1},
+  {email:"james@demo.com",password:"james123",role:"client",name:"James Carter",cid:2},
+];
+function AuthProvider({children}){
+  const [user,setUser]=useState(()=>{try{const u=localStorage.getItem("wb_usr");return u?JSON.parse(u):null;}catch{return null;}});
+  const login=(email,pass)=>{
+    const f=USERS.find(u=>u.email===email&&u.password===pass);
+    if(f){const u={email:f.email,role:f.role,name:f.name,cid:f.cid||null};setUser(u);localStorage.setItem("wb_usr",JSON.stringify(u));return{ok:true,role:f.role};}
+    return{ok:false};
+  };
+  const logout=()=>{setUser(null);localStorage.removeItem("wb_usr");};
+  return<AuthCtx.Provider value={{user,login,logout}}>{children}</AuthCtx.Provider>;
+}
+const useAuth=()=>useContext(AuthCtx);
+
+/* ═══ DATA ═══ */
+const LEADS_D=[
+  {id:1,name:"Rahim Uddin",phone:"01711-234567",biz:"Spice Garden",budget:"৳18,000",status:"Won",date:"2025-03-18",flag:"🇧🇩"},
+  {id:2,name:"James Carter",phone:"+44-7700-000001",biz:"Flame BBQ",budget:"$199",status:"Contacted",date:"2025-03-17",flag:"🇬🇧"},
+  {id:3,name:"Priya Sharma",phone:"+91-98000-00001",biz:"Aura Spa",budget:"$99",status:"New",date:"2025-03-16",flag:"🇮🇳"},
+  {id:4,name:"Sarah Johnson",phone:"+1-555-000001",biz:"MedCare",budget:"$349",status:"Won",date:"2025-03-15",flag:"🇺🇸"},
+  {id:5,name:"Karim Hossain",phone:"01812-345678",biz:"FitPeak Gym",budget:"৳35,000",status:"Lost",date:"2025-03-14",flag:"🇧🇩"},
+];
+const CLIENTS_D=[
+  {id:1,name:"Rahim Uddin",email:"client@demo.com",biz:"Spice Garden Restaurant",domain:"spicegarden.com",hosting:"Netlify",status:"Active",phone:"01711-234567",joined:"2025-02-10"},
+  {id:2,name:"James Carter",email:"james@demo.com",biz:"Flame BBQ",domain:"flamebb.co.uk",hosting:"Vercel",status:"Active",phone:"+44-7700-000001",joined:"2025-03-01"},
+];
+const PROJECTS_D=[
+  {id:1,cid:1,client:"Rahim Uddin",title:"Spice Garden Website",stage:"Delivered",prog:100,deadline:"2025-03-20",notes:"Live at spicegarden.com. All pages complete and tested.",link:"https://spicegarden.com"},
+  {id:2,cid:2,client:"James Carter",title:"Flame BBQ Website",stage:"In Progress",prog:65,deadline:"2025-04-05",notes:"Homepage & menu done. Gallery and contact page in progress.",link:""},
+];
+const PAYS_D=[
+  {id:"INV-001",cid:1,client:"Rahim Uddin",amount:18000,paid:18000,cur:"৳",status:"Paid",date:"2025-03-20"},
+  {id:"INV-002",cid:2,client:"James Carter",amount:199,paid:99,cur:"$",status:"Partial",date:"2025-03-15"},
+];
+const LOGS_D=[
+  {id:1,act:"Lead marked Won",detail:"Rahim Uddin — Spice Garden",time:"2h ago",ic:"🎯"},
+  {id:2,act:"Payment received",detail:"INV-001 fully paid ৳18,000",time:"5h ago",ic:"💰"},
+  {id:3,act:"Website delivered",detail:"Spice Garden Restaurant live",time:"1d ago",ic:"🚀"},
+  {id:4,act:"New lead arrived",detail:"Priya Sharma — India",time:"2d ago",ic:"📥"},
+  {id:5,act:"Client onboarded",detail:"James Carter — UK",time:"3d ago",ic:"👤"},
+];
+const PORT_D=[
+  {id:1,title:"Spice Garden Restaurant",niche:"Restaurant",result:"+40% bookings",emoji:"🍖",color:"#E8736B"},
+  {id:2,title:"FitPeak Gym",niche:"Gym",result:"+65% members",emoji:"💪",color:"#3B82F6"},
+  {id:3,title:"Aura Beauty Salon",niche:"Salon",result:"+55% clients",emoji:"💅",color:"#8B5CF6"},
+  {id:4,title:"MedCare Clinic",niche:"Clinic",result:"+35% leads",emoji:"🏥",color:"#10B981"},
+  {id:5,title:"BuildRight Construction",niche:"Construction",result:"+28% inquiries",emoji:"🏗️",color:"#F59E0B"},
+  {id:6,title:"LegalEdge Law Firm",niche:"Law",result:"+50% consults",emoji:"⚖️",color:"#6366F1"},
+];
+const PLANS=[
+  {n:"Starter",p:"$99",loc:"৳8,000",del:"5–7 days",pop:false,f:["5-Page Website","Mobile Responsive","Contact Form","WhatsApp Button","1 Month Support","Basic SEO","Fast Loading"]},
+  {n:"Professional",p:"$199",loc:"৳18,000",del:"7–10 days",pop:true,f:["10-Page Website","Premium Design","SEO Optimized","Payment Integration","Admin Panel","3 Months Support","Google Analytics","Speed Optimized","WhatsApp CRM","Revision Rounds"]},
+  {n:"Enterprise",p:"$349",loc:"৳35,000",del:"14–21 days",pop:false,f:["Unlimited Pages","Custom Features","E-Commerce Store","Blog System","1 Year Support","Priority Delivery","Custom Domain","Email Setup","International SEO","Dedicated Manager"]},
+];
+const SVC=[
+  {ic:"🎨",t:"UI/UX Design",d:"World-class designs that capture attention and guide visitors to convert from the very first scroll.",tag:"Design"},
+  {ic:"⚡",t:"Web Development",d:"Fast, secure, scalable websites built with modern technology that performs globally.",tag:"Dev"},
+  {ic:"🚀",t:"Landing Pages",d:"Conversion-engineered pages that turn ad traffic into real paying customers every day.",tag:"Marketing"},
+  {ic:"🏢",t:"Business Websites",d:"Professional multi-page sites that establish international authority and trust instantly.",tag:"Business"},
+  {ic:"🔍",t:"SEO & Growth",d:"Rank on Google worldwide and attract consistent organic traffic to your business.",tag:"SEO"},
+  {ic:"🛒",t:"E-Commerce",d:"Full online stores with payment gateway, inventory, and customer management built in.",tag:"Store"},
+];
+
+/* ═══ STATUS BADGE ═══ */
+function SB({s}){
+  const m={New:{bg:"rgba(59,130,246,.1)",c:"#2563EB"},Contacted:{bg:"rgba(245,158,11,.1)",c:"#D97706"},Won:{bg:"rgba(16,185,129,.1)",c:"#059669"},Lost:{bg:"rgba(239,68,68,.1)",c:"#DC2626"},Active:{bg:"rgba(16,185,129,.1)",c:"#059669"},Inactive:{bg:"rgba(239,68,68,.1)",c:"#DC2626"},Paid:{bg:"rgba(16,185,129,.1)",c:"#059669"},Partial:{bg:"rgba(245,158,11,.1)",c:"#D97706"},Pending:{bg:"rgba(239,68,68,.08)",c:"#DC2626"},Delivered:{bg:"rgba(16,185,129,.1)",c:"#059669"},"In Progress":{bg:"rgba(59,130,246,.1)",c:"#2563EB"},Planning:{bg:"rgba(245,158,11,.1)",c:"#D97706"},Review:{bg:"rgba(139,92,246,.1)",c:"#7C3AED"}};
+  const x=m[s]||{bg:"rgba(0,0,0,.05)",c:"#666"};
+  return<span className="sb" style={{background:x.bg,color:x.c}}>{s}</span>;
+}
+
+/* ═══ LOGO — exact match to PNG ═══ */
+function Logo({size=34,textSize=19,onDark=false}){
+  return(
+    <div style={{display:"flex",alignItems:"center",gap:10,cursor:"pointer",userSelect:"none"}}>
+      <svg width={size} height={size*0.78} viewBox="0 0 120 94" fill="none">
+        <defs>
+          <linearGradient id="wg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#C94040"/>
+            <stop offset="50%" stopColor="#D4574A"/>
+            <stop offset="100%" stopColor="#E8736B"/>
+          </linearGradient>
+        </defs>
+        <circle cx="16" cy="10" r="4.5" fill="url(#wg)" opacity=".92"/>
+        <circle cx="29" cy="10" r="4.5" fill="url(#wg)" opacity=".65"/>
+        <circle cx="42" cy="10" r="4.5" fill="url(#wg)" opacity=".38"/>
+        <path d="M6 24 L30 82 L54 38 L78 82 L102 24" stroke="url(#wg)" strokeWidth="11" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+        <path d="M72 24 L93 78" stroke="url(#wg)" strokeWidth="9" strokeLinecap="round" opacity=".42"/>
+      </svg>
+      <span style={{fontFamily:"'Outfit',sans-serif",fontWeight:800,fontSize:textSize,color:onDark?"#fff":"var(--ink)",letterSpacing:"-.4px"}}>webus</span>
+    </div>
+  );
+}
+
+/* ═══ STAR CANVAS ═══ */
+function Stars({n=120}){
+  const ref=useRef();
+  useEffect(()=>{
+    const c=ref.current;if(!c)return;
+    const ctx=c.getContext("2d");
+    let W=c.width=c.offsetWidth||window.innerWidth,H=c.height=c.offsetHeight||600;
+    const stars=Array.from({length:n},()=>({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.6+.3,o:Math.random()*.55+.15,s:Math.random()*.45+.1}));
+    let raf;
+    const draw=()=>{ctx.clearRect(0,0,W,H);stars.forEach(s=>{ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fillStyle=`rgba(147,197,253,${s.o})`;ctx.fill();s.y-=s.s;if(s.y<0){s.y=H;s.x=Math.random()*W;}});raf=requestAnimationFrame(draw);};
+    draw();const rs=()=>{W=c.width=c.offsetWidth;H=c.height=c.offsetHeight;};window.addEventListener("resize",rs);
+    return()=>{cancelAnimationFrame(raf);window.removeEventListener("resize",rs);};
+  },[]);
+  return<canvas ref={ref} style={{position:"absolute",inset:0,width:"100%",height:"100%",pointerEvents:"none",opacity:.55}}/>;
+}
+
+/* ═══ OBSERVER ═══ */
+function useObs(){
+  useEffect(()=>{
+    const ob=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("vis");}),{threshold:.08});
+    document.querySelectorAll(".fi:not(.vis)").forEach(el=>ob.observe(el));
+    return()=>ob.disconnect();
+  });
+}
+
+/* ═══ LOGIN ═══ */
+function Login({nav}){
+  const {login}=useAuth();
+  const [email,setEmail]=useState("nazmulhasanramim123@gmail.com");
+  const [pass,setPass]=useState("@#৳%&*-+@");
+  const [show,setShow]=useState(false);
+  const [err,setErr]=useState("");
+  const [loading,setLoading]=useState(false);
+  const [role,setRole]=useState("admin");
+
+  const fill=r=>{setRole(r);if(r==="admin"){setEmail("nazmulhasanramim123@gmail.com");setPass("@#৳%&*-+@");}else{setEmail("client@demo.com");setPass("client123");}};
+
+  const go=()=>{
+    if(!email||!pass){setErr("Please enter email and password.");return;}
+    setLoading(true);setErr("");
+    setTimeout(()=>{
+      const r=login(email,pass);
+      if(r.ok)nav(r.role==="admin"?"admin":"client");
+      else setErr("Invalid credentials. Please try again.");
+      setLoading(false);
+    },700);
+  };
+
+  return(
+    <div style={{minHeight:"100vh",background:"linear-gradient(160deg,#0f172a 0%,#1e3a5f 40%,#1e40af 70%,#0f172a 100%)",display:"flex",alignItems:"center",justifyContent:"center",padding:20,position:"relative",overflow:"hidden"}}>
+      <Stars n={110}/>
+      {/* Glow orbs */}
+      <div style={{position:"absolute",top:"15%",left:"10%",width:350,height:350,borderRadius:"50%",background:"radial-gradient(circle,rgba(59,130,246,.1),transparent 70%)",pointerEvents:"none"}}/>
+      <div style={{position:"absolute",bottom:"10%",right:"8%",width:280,height:280,borderRadius:"50%",background:"radial-gradient(circle,rgba(232,115,107,.08),transparent 70%)",pointerEvents:"none"}}/>
+      {/* Orbit rings */}
+      {[120,200].map((r,i)=>(
+        <div key={i} style={{position:"absolute",top:"50%",right:"15%",width:r*2,height:r*2,marginRight:-r,marginTop:-r,borderRadius:"50%",border:"1px solid rgba(147,197,253,.07)",animation:`spin-s ${20+i*10}s linear infinite`,pointerEvents:"none"}} className="hm"/>
+      ))}
+
+      <div style={{width:"100%",maxWidth:440,position:"relative",zIndex:2,animation:"sc-in .45s ease"}}>
+        <div style={{background:"rgba(240,247,255,.97)",borderRadius:24,padding:"40px 36px",boxShadow:"0 24px 80px rgba(0,0,0,.4)",border:"1px solid rgba(255,255,255,.9)"}}>
+          <div style={{display:"flex",justifyContent:"center",marginBottom:6}}><Logo size={36} textSize={22}/></div>
+          <p style={{textAlign:"center",color:"var(--mid)",fontSize:13,marginBottom:26,fontFamily:"'DM Sans',sans-serif"}}>Welcome back — Sign in to continue</p>
+
+          {/* Role toggle */}
+          <div style={{display:"flex",background:"var(--blue2)",borderRadius:12,padding:4,marginBottom:22,gap:4}}>
+            {[["admin","⚙️ Admin"],["client","👤 Client"]].map(([r,l])=>(
+              <button key={r} onClick={()=>fill(r)}
+                style={{flex:1,padding:"9px",borderRadius:9,border:"none",cursor:"pointer",fontFamily:"'Outfit',sans-serif",fontWeight:700,fontSize:13,transition:"all .2s",
+                  background:role===r?"#fff":"transparent",color:role===r?"var(--bluemid)":"var(--mid)",
+                  boxShadow:role===r?"0 2px 8px rgba(59,130,246,.15)":"none"}}>
+                {l}
+              </button>
+            ))}
+          </div>
+
+          {/* Credentials hint */}
+          <div style={{background:"rgba(59,130,246,.06)",border:"1px solid rgba(59,130,246,.18)",borderRadius:10,padding:"9px 13px",marginBottom:18,fontSize:12,color:"var(--bluemid)",lineHeight:1.55}}>
+            <strong>{role==="admin"?"Admin":"Client"} credentials loaded.</strong> Click Sign In to continue.
+          </div>
+
+          <div style={{marginBottom:13}}>
+            <label>Email Address</label>
+            <input type="email" value={email} onChange={e=>setEmail(e.target.value)} placeholder="Enter email"/>
+          </div>
+          <div style={{marginBottom:8,position:"relative"}}>
+            <label>Password</label>
+            <input type={show?"text":"password"} value={pass} onChange={e=>setPass(e.target.value)} placeholder="Enter password" onKeyDown={e=>e.key==="Enter"&&go()}/>
+            <button onClick={()=>setShow(!show)} style={{position:"absolute",right:12,top:34,background:"none",border:"none",cursor:"pointer",fontSize:16,color:"var(--light)"}}>
+              {show?"🙈":"👁️"}
+            </button>
+          </div>
+
+          <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:18}}>
+            <label style={{display:"flex",alignItems:"center",gap:6,cursor:"pointer",color:"var(--mid)",fontSize:12,margin:0,fontWeight:400}}>
+              <input type="checkbox" style={{width:13,height:13,accentColor:"var(--bluemid)"}}/> Remember me
+            </label>
+            <span style={{fontSize:12,color:"var(--bluemid)",cursor:"pointer",fontWeight:600}}>Forgot password?</span>
+          </div>
+
+          {err&&<div style={{background:"rgba(220,38,38,.07)",border:"1px solid rgba(220,38,38,.2)",borderRadius:9,padding:"9px 13px",color:"#DC2626",fontSize:13,marginBottom:14}}>⚠️ {err}</div>}
+
+          <button className="bb" style={{width:"100%",padding:"14px",borderRadius:12,fontSize:15,marginBottom:11}} onClick={go}>
+            {loading?"Signing in…":"Sign In →"}
+          </button>
+          <button className="bob" style={{width:"100%",padding:"12px",borderRadius:12,fontSize:14}} onClick={()=>nav("home")}>
+            ← Back to Website
+          </button>
+        </div>
+        <p style={{textAlign:"center",color:"rgba(255,255,255,.28)",fontSize:12,marginTop:16}}>© 2025 Webus Agency · All rights reserved</p>
+      </div>
+    </div>
+  );
+}
+
+/* ═══ NAVBAR ═══ */
+function Nav({nav}){
+  const [sc,setSc]=useState(false);
+  const [op,setOp]=useState(false);
+  useEffect(()=>{const h=()=>setSc(window.scrollY>50);window.addEventListener("scroll",h);return()=>window.removeEventListener("scroll",h);},[]);
+  const go=id=>{setOp(false);setTimeout(()=>document.getElementById(id)?.scrollIntoView({behavior:"smooth"}),80);};
+  return(
+    <nav style={{position:"fixed",top:0,left:0,right:0,zIndex:300,background:sc?"rgba(240,247,255,.97)":"transparent",backdropFilter:sc?"blur(20px)":"none",borderBottom:sc?"1px solid var(--border)":"none",boxShadow:sc?"0 2px 16px rgba(59,130,246,.1)":"none",transition:"all .4s",padding:"0 5%"}}>
+      <div style={{maxWidth:1200,margin:"0 auto",display:"flex",alignItems:"center",justifyContent:"space-between",height:68}}>
+        <div onClick={()=>{window.scrollTo(0,0);}}><Logo size={30} textSize={18} onDark={!sc}/></div>
+        <div className="hm" style={{display:"flex",gap:30,alignItems:"center"}}>
+          {[["Services","sv"],["Portfolio","pf"],["Pricing","pr"],["About","ab"],["Contact","ct"]].map(([l,id])=>(
+            <span key={id} onClick={()=>go(id)} style={{color:sc?"var(--mid)":"rgba(219,234,254,.85)",fontSize:14,cursor:"pointer",fontWeight:500,transition:"color .2s"}}
+              onMouseOver={e=>e.target.style.color=sc?"var(--bluemid)":"#fff"} onMouseOut={e=>e.target.style.color=sc?"var(--mid)":"rgba(219,234,254,.85)"}>{l}</span>
+          ))}
+          <button className="bp" style={{padding:"10px 22px",borderRadius:10,fontSize:13}} onClick={()=>go("ct")}>Free Demo</button>
+          <button onClick={()=>nav("login")} style={{background:"rgba(59,130,246,.12)",border:"1px solid rgba(59,130,246,.28)",color:sc?"var(--bluemid)":"#93C5FD",borderRadius:10,padding:"9px 16px",cursor:"pointer",fontSize:13,fontFamily:"'DM Sans',sans-serif",fontWeight:600,transition:"all .2s"}}
+            onMouseOver={e=>{e.currentTarget.style.background="rgba(59,130,246,.22)"}} onMouseOut={e=>{e.currentTarget.style.background="rgba(59,130,246,.12)"}}>
+            Sign In
+          </button>
+        </div>
+        <button style={{display:"none",background:"none",border:"none",color:sc?"var(--bluemid)":"#93C5FD",fontSize:26,cursor:"pointer"}} className="mhb" onClick={()=>setOp(!op)}>{op?"✕":"☰"}</button>
+      </div>
+      <style>{`.mhb{display:none!important;}@media(max-width:768px){.mhb{display:block!important;}}`}</style>
+      {op&&(
+        <div style={{background:"rgba(240,247,255,.98)",padding:"20px 5%",borderTop:"1px solid var(--border)",boxShadow:"0 8px 32px rgba(59,130,246,.1)"}}>
+          {[["Services","sv"],["Portfolio","pf"],["Pricing","pr"],["About","ab"],["Contact","ct"]].map(([l,id])=>(
+            <div key={id} onClick={()=>go(id)} style={{color:"var(--mid)",padding:"12px 0",borderBottom:"1px solid var(--border)",cursor:"pointer",fontSize:15,fontWeight:500}}>{l}</div>
+          ))}
+          <div style={{display:"flex",gap:10,marginTop:14}}>
+            <button className="bp" style={{flex:1,padding:"12px",borderRadius:10,fontSize:13}} onClick={()=>go("ct")}>Free Demo</button>
+            <button onClick={()=>{nav("login");setOp(false);}} style={{background:"rgba(59,130,246,.1)",border:"1px solid rgba(59,130,246,.25)",color:"var(--bluemid)",borderRadius:10,padding:"12px 16px",cursor:"pointer",fontSize:13,fontFamily:"'DM Sans',sans-serif",fontWeight:600}}>Sign In</button>
+          </div>
+        </div>
+      )}
+    </nav>
+  );
+}
+
+/* ═══ HERO ═══ */
+function Hero({nav}){
+  useObs();
+  const [typed,setTyped]=useState("");
+  const words=["Restaurants","Gyms","Salons","Clinics","Businesses","E-Commerce"];
+  const [wi,setWi]=useState(0);
+  useEffect(()=>{
+    let i=0,del=false,cw=0;
+    const t=setInterval(()=>{
+      const w=words[cw%words.length];
+      if(!del){setTyped(w.slice(0,i+1));i++;if(i>=w.length)del=true;}
+      else{setTyped(w.slice(0,i-1));i--;if(i<=0){del=false;cw++;setWi(cw);}}
+    },130);
+    return()=>clearInterval(t);
+  },[]);
+
+  return(
+    <section id="home" style={{minHeight:"100vh",display:"flex",alignItems:"center",position:"relative",overflow:"hidden",
+      background:"linear-gradient(175deg,#0f172a 0%,#1e3a5f 25%,#1e40af 55%,#1d4ed8 75%,#0f172a 100%)"}}>
+      <Stars n={140}/>
+      {/* Big glow */}
+      <div style={{position:"absolute",top:"8%",right:"6%",width:420,height:420,borderRadius:"50%",background:"radial-gradient(circle at 40% 40%,rgba(147,197,253,.1),rgba(59,130,246,.06),transparent 70%)",border:"1px solid rgba(147,197,253,.07)",animation:"float 9s ease-in-out infinite",pointerEvents:"none"}}/>
+      <div style={{position:"absolute",bottom:"10%",left:"3%",width:280,height:280,borderRadius:"50%",background:"radial-gradient(circle,rgba(232,115,107,.07),transparent 70%)",animation:"float2 11s ease-in-out infinite",pointerEvents:"none"}}/>
+      {/* Grid */}
+      <div style={{position:"absolute",inset:0,backgroundImage:"linear-gradient(rgba(147,197,253,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(147,197,253,.025) 1px,transparent 1px)",backgroundSize:"55px 55px",pointerEvents:"none"}}/>
+      {/* Orbit */}
+      {[150,230,320].map((r,i)=>(
+        <div key={i} className="hm" style={{position:"absolute",top:"45%",right:"14%",width:r*2,height:r*2,marginRight:-r,marginTop:-r,borderRadius:"50%",border:"1px solid rgba(147,197,253,.06)",animation:`spin-s ${24+i*10}s linear infinite`,pointerEvents:"none"}}>
+          <div style={{width:7,height:7,borderRadius:"50%",background:"#93C5FD",opacity:.4,position:"absolute",top:-3.5,left:"50%",marginLeft:-3.5}}/>
+        </div>
+      ))}
+
+      <div style={{maxWidth:1200,margin:"0 auto",padding:"130px 5% 80px",position:"relative",zIndex:2,width:"100%"}}>
+        <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:56,alignItems:"center"}} className="g2">
+          <div>
+            <div className="stag fi" style={{marginBottom:24,background:"rgba(147,197,253,.15)",borderColor:"rgba(147,197,253,.35)",color:"#93C5FD"}}>🌍 International Web Agency</div>
+            <h1 className="fi" style={{fontSize:"clamp(36px,5.5vw,68px)",lineHeight:1.06,fontWeight:900,marginBottom:20,color:"#F0F7FF",transitionDelay:".1s"}}>
+              We Build Websites<br/>
+              <span style={{background:"linear-gradient(135deg,#E8736B,#F5C8C3)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent"}}>That Convert</span><br/>
+              <span style={{color:"rgba(219,234,254,.45)",fontSize:".7em",fontWeight:500}}>For </span>
+              <span style={{background:"linear-gradient(135deg,#93C5FD,#BFDBFE)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent"}}>{typed}</span>
+              <span style={{display:"inline-block",width:3,height:".72em",background:"#93C5FD",animation:"blink 1s infinite",verticalAlign:"middle",marginLeft:3,borderRadius:1}}/>
+            </h1>
+            <p className="fi" style={{fontSize:17,color:"rgba(219,234,254,.55)",lineHeight:1.8,marginBottom:44,fontWeight:300,maxWidth:500,transitionDelay:".18s"}}>
+              From Bangladesh to the world. Premium design, fast delivery, and real business growth — all in one agency.
+            </p>
+            <div className="fi" style={{display:"flex",gap:14,flexWrap:"wrap",marginBottom:48,transitionDelay:".28s"}}>
+              <button className="bp" style={{padding:"15px 30px",borderRadius:12,fontSize:15,animation:"glow-coral 3s infinite"}} onClick={()=>document.getElementById("ct")?.scrollIntoView({behavior:"smooth"})}>
+                Get Free Demo →
+              </button>
+              <button className="bw" style={{padding:"15px 26px",borderRadius:12,fontSize:15}} onClick={()=>document.getElementById("pf")?.scrollIntoView({behavior:"smooth"})}>
+                View Our Work
+              </button>
+            </div>
+            <div className="fi" style={{display:"flex",gap:12,flexWrap:"wrap",transitionDelay:".38s"}}>
+              {[["⚡","Fast Delivery"],["🏆","Premium Quality"],["🌍","International"],["🔒","Secure & Fast"]].map(([ic,t])=>(
+                <div key={t} style={{display:"flex",alignItems:"center",gap:8,background:"rgba(255,255,255,.08)",backdropFilter:"blur(10px)",border:"1px solid rgba(147,197,253,.18)",borderRadius:10,padding:"7px 13px"}}>
+                  <span style={{fontSize:15}}>{ic}</span>
+                  <span style={{fontSize:12,fontWeight:600,color:"rgba(219,234,254,.8)"}}>{t}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* 3D Devices */}
+          <div className="fi hm" style={{transitionDelay:".3s",animation:"float 6s ease-in-out infinite",position:"relative"}}>
+            <div style={{perspective:900}}>
+              <div style={{transform:"rotateY(-10deg) rotateX(4deg)",transformStyle:"preserve-3d",transition:"transform .3s"}}
+                onMouseOver={e=>e.currentTarget.style.transform="rotateY(-5deg) rotateX(2deg)"}
+                onMouseOut={e=>e.currentTarget.style.transform="rotateY(-10deg) rotateX(4deg)"}>
+                <div style={{background:"linear-gradient(145deg,#1e3a5f,#0f2240)",borderRadius:"12px 12px 0 0",border:"2px solid rgba(147,197,253,.1)",padding:"8px 8px 0",boxShadow:"0 30px 80px rgba(0,0,0,.55)"}}>
+                  <div style={{background:"#060f1e",borderRadius:8,overflow:"hidden",paddingBottom:"62%",position:"relative"}}>
+                    <div style={{position:"absolute",inset:0,padding:"12px 14px"}}>
+                      <div style={{height:4,background:"linear-gradient(90deg,#D4574A,#E8736B)",borderRadius:3,marginBottom:9,width:"55%"}}/>
+                      {[88,70,92,55,78,65].map((w,i)=>(
+                        <div key={i} style={{height:3,background:`rgba(147,197,253,${.1+i*.02})`,borderRadius:2,width:`${w}%`,marginBottom:5}}/>
+                      ))}
+                      <div style={{height:22,background:"rgba(59,130,246,.08)",borderRadius:6,margin:"8px 0 6px",border:"1px solid rgba(59,130,246,.14)"}}/>
+                      <div style={{fontSize:10,color:"rgba(147,197,253,.5)",fontFamily:"'Outfit',sans-serif",marginTop:4}}>webus.agency</div>
+                    </div>
+                    <div style={{position:"absolute",inset:0,background:"radial-gradient(ellipse at 50% 0%,rgba(59,130,246,.12),transparent 65%)"}}/>
+                    <div style={{position:"absolute",bottom:"22%",left:"14%",width:5,height:11,background:"#93C5FD",animation:"blink 1.2s infinite",borderRadius:1,opacity:.6}}/>
+                  </div>
+                </div>
+                <div style={{background:"linear-gradient(145deg,#1a2f4e,#0d1f35)",height:12,borderRadius:"0 0 8px 8px",border:"2px solid rgba(147,197,253,.07)",borderTop:"none"}}/>
+                <div style={{background:"#0a1628",height:8,borderRadius:"0 0 10px 10px",marginTop:-2}}/>
+              </div>
+            </div>
+            {/* Mobile */}
+            <div style={{position:"absolute",right:-28,bottom:0,width:"22%",animation:"float 5s ease-in-out 1s infinite"}}>
+              <div style={{background:"linear-gradient(145deg,#1e3a5f,#0f2240)",borderRadius:14,border:"2px solid rgba(147,197,253,.12)",overflow:"hidden",paddingBottom:"185%",position:"relative"}}>
+                <div style={{position:"absolute",inset:"4% 4%",background:"#060f1e",borderRadius:10,overflow:"hidden"}}>
+                  <div style={{padding:"8px 6px"}}>
+                    <div style={{height:3,background:"linear-gradient(90deg,#D4574A,#E8736B)",borderRadius:2,marginBottom:5}}/>
+                    {[80,60,90,50,70].map((w,i)=><div key={i} style={{height:2.5,background:`rgba(147,197,253,${.08+i*.02})`,borderRadius:2,width:`${w}%`,marginBottom:4}}/>)}
+                    <div style={{height:16,background:"rgba(59,130,246,.07)",borderRadius:4,margin:"5px 0"}}/>
+                  </div>
+                </div>
+                <div style={{position:"absolute",top:5,left:"50%",transform:"translateX(-50%)",width:"28%",height:3.5,background:"rgba(0,0,0,.6)",borderRadius:999}}/>
+              </div>
+            </div>
+            {/* Badges */}
+            <div style={{position:"absolute",top:-12,right:16,background:"rgba(240,247,255,.97)",borderRadius:12,padding:"8px 13px",boxShadow:"0 8px 24px rgba(0,0,0,.25)",animation:"fu .8s .3s both",backdropFilter:"blur(10px)"}}>
+              <div style={{fontSize:10,color:"var(--mid)",marginBottom:1}}>Performance</div>
+              <div style={{fontSize:15,fontWeight:800,color:"var(--coral)",fontFamily:"'Outfit',sans-serif"}}>99/100 ⚡</div>
+            </div>
+            <div style={{position:"absolute",bottom:32,left:-16,background:"rgba(240,247,255,.97)",borderRadius:12,padding:"8px 13px",boxShadow:"0 8px 24px rgba(0,0,0,.25)",animation:"fu .8s .5s both",backdropFilter:"blur(10px)"}}>
+              <div style={{display:"flex",alignItems:"center",gap:6}}>
+                <div style={{width:7,height:7,borderRadius:"50%",background:"#10B981",boxShadow:"0 0 6px #10B981"}}/>
+                <div style={{fontSize:11,fontWeight:700,color:"var(--ink)"}}>Live & Running</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Stats */}
+        <div className="fi g4" style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:16,marginTop:56,transitionDelay:".48s"}}>
+          {[["50+","Websites Built","🌐"],["98%","Satisfaction","⭐"],["15+","Countries","🌍"],["5★","Avg Rating","💎"]].map(([n,l,ic])=>(
+            <div key={l} style={{background:"rgba(255,255,255,.08)",backdropFilter:"blur(12px)",border:"1px solid rgba(147,197,253,.15)",borderRadius:16,padding:"18px 14px",textAlign:"center"}}>
+              <div style={{fontSize:20,marginBottom:5}}>{ic}</div>
+              <div style={{fontSize:26,fontWeight:900,fontFamily:"'Outfit',sans-serif",color:"#BFDBFE",marginBottom:2}}>{n}</div>
+              <div style={{fontSize:11,color:"rgba(219,234,254,.4)"}}>{l}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div style={{position:"absolute",bottom:0,left:0,right:0,lineHeight:0}}>
+        <svg viewBox="0 0 1440 70" fill="none"><path d="M0 70L60 58C120 46,240 22,360 14C480 6,600 11,720 21C840 31,960 46,1080 51C1200 56,1320 50,1380 47L1440 44V70H0Z" fill="#EBF4FF"/></svg>
+      </div>
+    </section>
+  );
+}
+
+/* ═══ SERVICES ═══ */
+function Services(){
+  useObs();
+  return(
+    <section id="sv" style={{background:"var(--bg)",padding:"96px 5%"}}>
+      <div style={{maxWidth:1200,margin:"0 auto"}}>
+        <div className="fi" style={{textAlign:"center",marginBottom:60}}>
+          <div className="stag" style={{marginBottom:14}}>🛠️ Services</div>
+          <h2 style={{fontSize:"clamp(28px,5vw,50px)",fontWeight:800,marginBottom:12}}>Services That <span className="gt">Drive Results</span></h2>
+          <p style={{color:"var(--mid)",fontSize:16,maxWidth:440,margin:"0 auto",lineHeight:1.7}}>Every service designed to grow your business online.</p>
+        </div>
+        <div className="g3" style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:22}}>
+          {SVC.map((s,i)=>(
+            <div key={i} className="gc fi" style={{padding:"30px 24px",transitionDelay:`${i*.07}s`}}>
+              <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:16}}>
+                <div style={{width:52,height:52,borderRadius:14,background:"var(--blue2)",border:"1px solid var(--border)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:25}}>{s.ic}</div>
+                <span style={{background:"rgba(59,130,246,.08)",border:"1px solid rgba(59,130,246,.18)",color:"var(--bluemid)",borderRadius:999,padding:"3px 10px",fontSize:10,fontWeight:700,letterSpacing:1,textTransform:"uppercase"}}>{s.tag}</span>
+              </div>
+              <h3 style={{fontSize:17,fontWeight:700,marginBottom:9,color:"var(--ink)"}}>{s.t}</h3>
+              <p style={{color:"var(--mid)",fontSize:13,lineHeight:1.75}}>{s.d}</p>
+              <div style={{marginTop:16,color:"var(--coral)",fontSize:12,fontWeight:600,cursor:"pointer"}}>Learn more →</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ═══ PORTFOLIO ═══ */
+function Portfolio(){
+  useObs();
+  const [filter,setFilter]=useState("All");
+  const [port,setPort]=useState(PORT_D);
+  const [modal,setModal]=useState(false);
+  const [eid,setEid]=useState(null);
+  const ef={title:"",niche:"Restaurant",result:"",emoji:"🌐",color:"#3B82F6",link:"",desc:""};
+  const [form,setForm]=useState(ef);
+  const niches=["All",...new Set(port.map(p=>p.niche))];
+  const shown=filter==="All"?port:port.filter(p=>p.niche===filter);
+  const cols=["#E8736B","#3B82F6","#8B5CF6","#10B981","#F59E0B","#6366F1","#D4574A","#06B6D4"];
+  const emojis=["🍖","💪","💅","🏥","🏗️","⚖️","🌐","🍕","☕","🛍️","🏫","🏨","✈️","💻","🐾","🎵"];
+  const save=()=>{
+    if(!form.title)return;
+    if(eid!==null)setPort(p=>p.map(x=>x.id===eid?{...form,id:eid}:x));
+    else setPort(p=>[...p,{...form,id:Date.now()}]);
+    setModal(false);setEid(null);setForm(ef);
+  };
+  return(
+    <section id="pf" style={{background:"var(--surface)",padding:"96px 5%"}}>
+      <div style={{maxWidth:1200,margin:"0 auto"}}>
+        <div className="fi" style={{textAlign:"center",marginBottom:44}}>
+          <div className="stag" style={{marginBottom:14}}>🖼️ Portfolio</div>
+          <h2 style={{fontSize:"clamp(28px,5vw,50px)",fontWeight:800,marginBottom:12}}>Real Results We've <span className="gt">Delivered</span></h2>
+          <p style={{color:"var(--mid)",fontSize:16,maxWidth:420,margin:"0 auto"}}>Websites that actually grow businesses worldwide.</p>
+        </div>
+        <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",flexWrap:"wrap",gap:12,marginBottom:32}}>
+          <div style={{display:"flex",gap:9,flexWrap:"wrap"}}>
+            {niches.map(n=>(
+              <button key={n} onClick={()=>setFilter(n)}
+                style={{padding:"7px 18px",borderRadius:999,border:"1.5px solid",borderColor:filter===n?"var(--bluemid)":"var(--border)",background:filter===n?"linear-gradient(135deg,#3B82F6,#1E40AF)":"#fff",color:filter===n?"#fff":"var(--mid)",fontFamily:"'DM Sans',sans-serif",fontSize:13,cursor:"pointer",fontWeight:600,transition:"all .22s",boxShadow:filter===n?"0 4px 14px rgba(59,130,246,.3)":"none"}}>
+                {n}
+              </button>
+            ))}
+          </div>
+          <button className="bp" style={{padding:"9px 18px",borderRadius:9,fontSize:13}} onClick={()=>{setModal(true);setEid(null);setForm(ef);}}>+ Add Project</button>
+        </div>
+        {modal&&(
+          <div style={{position:"fixed",inset:0,background:"rgba(0,0,0,.55)",zIndex:700,display:"flex",alignItems:"center",justifyContent:"center",padding:20,backdropFilter:"blur(4px)"}} onClick={e=>e.target===e.currentTarget&&(setModal(false),setEid(null))}>
+            <div style={{background:"#fff",borderRadius:22,padding:"28px 24px",width:"100%",maxWidth:500,maxHeight:"92vh",overflowY:"auto",boxShadow:"0 24px 80px rgba(0,0,0,.2)",animation:"sc-in .28s ease"}}>
+              <h3 style={{fontSize:18,fontWeight:700,marginBottom:18,color:"var(--ink)"}}>{eid!==null?"Edit":"Add"} Project</h3>
+              <div style={{display:"grid",gap:12}}>
+                <div><label>Title *</label><input placeholder="Project name" value={form.title} onChange={e=>setForm({...form,title:e.target.value})}/></div>
+                <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:11}}>
+                  <div><label>Niche</label><select value={form.niche} onChange={e=>setForm({...form,niche:e.target.value})}>{["Restaurant","Gym","Salon","Clinic","Construction","Law","Education","Hotel","E-Commerce","Other"].map(n=><option key={n}>{n}</option>)}</select></div>
+                  <div><label>Result</label><input placeholder="+40% bookings" value={form.result} onChange={e=>setForm({...form,result:e.target.value})}/></div>
+                </div>
+                <div><label>Emoji</label><div style={{display:"flex",gap:7,flexWrap:"wrap"}}>{emojis.map(em=><div key={em} onClick={()=>setForm({...form,emoji:em})} style={{width:34,height:34,borderRadius:8,display:"flex",alignItems:"center",justifyContent:"center",fontSize:17,cursor:"pointer",background:form.emoji===em?"var(--blue2)":"var(--bg)",border:`1.5px solid ${form.emoji===em?"var(--bluemid)":"transparent"}`,transition:"all .14s"}}>{em}</div>)}</div></div>
+                <div style={{display:"grid",gridTemplateColumns:"auto 1fr",gap:11,alignItems:"end"}}>
+                  <div><label>Color</label><div style={{display:"flex",gap:6,flexWrap:"wrap"}}>{cols.map(c=><div key={c} onClick={()=>setForm({...form,color:c})} style={{width:26,height:26,borderRadius:6,background:c,cursor:"pointer",border:`2.5px solid ${form.color===c?"var(--ink)":"transparent"}`}}/>)}</div></div>
+                  <div><label>Live URL</label><input placeholder="site.com" value={form.link} onChange={e=>setForm({...form,link:e.target.value})}/></div>
+                </div>
+                <div><label>Description</label><textarea placeholder="Short description..." rows={2} value={form.desc} onChange={e=>setForm({...form,desc:e.target.value})} style={{resize:"none"}}/></div>
+              </div>
+              <div style={{display:"flex",gap:11,marginTop:18}}>
+                <button className="bb" style={{flex:1,padding:"12px",borderRadius:10,fontSize:14}} onClick={save}>{eid!==null?"Save Changes":"Add Project"}</button>
+                <button className="bob" style={{padding:"12px 16px",borderRadius:10,fontSize:14}} onClick={()=>{setModal(false);setEid(null);}}>Cancel</button>
+              </div>
+            </div>
+          </div>
+        )}
+        <div className="g3" style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:20}}>
+          {shown.map((p,i)=>(
+            <div key={p.id} className="card fi" style={{overflow:"hidden",transitionDelay:`${i*.07}s`}}>
+              <div style={{height:160,background:`linear-gradient(135deg,${p.color}14,${p.color}30)`,display:"flex",alignItems:"center",justifyContent:"center",fontSize:68,position:"relative"}}>
+                {p.emoji}
+                <div style={{position:"absolute",top:9,left:9,background:"rgba(0,0,0,.45)",backdropFilter:"blur(5px)",borderRadius:7,padding:"2px 8px",fontSize:10,color:"#fff",fontWeight:600}}>{p.niche}</div>
+                {p.link&&<a href={`https://${p.link}`} target="_blank" rel="noreferrer" style={{position:"absolute",top:9,right:9,background:`${p.color}cc`,borderRadius:7,padding:"2px 8px",fontSize:10,color:"#fff",textDecoration:"none",fontWeight:700}}>↗ Live</a>}
+              </div>
+              <div style={{padding:"14px 16px 16px"}}>
+                <h3 style={{fontSize:15,fontWeight:700,marginBottom:5,color:"var(--ink)"}}>{p.title}</h3>
+                {p.desc&&<p style={{fontSize:12,color:"var(--mid)",lineHeight:1.55,marginBottom:8}}>{p.desc}</p>}
+                <div style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
+                  <div style={{display:"inline-flex",alignItems:"center",gap:4,background:"rgba(16,185,129,.08)",border:"1px solid rgba(16,185,129,.2)",borderRadius:999,padding:"3px 10px",fontSize:11,color:"#059669",fontWeight:600}}>📈 {p.result}</div>
+                  <div style={{display:"flex",gap:5}}>
+                    <button onClick={()=>{setEid(p.id);setForm({...p});setModal(true);}} style={{background:"var(--blue2)",border:"1px solid var(--border)",color:"var(--bluemid)",borderRadius:7,padding:"3px 9px",fontSize:11,cursor:"pointer",fontWeight:600}}>✏️</button>
+                    <button onClick={()=>setPort(prev=>prev.filter(x=>x.id!==p.id))} style={{background:"rgba(220,38,38,.06)",border:"1px solid rgba(220,38,38,.18)",color:"#DC2626",borderRadius:7,padding:"3px 9px",fontSize:11,cursor:"pointer",fontWeight:600}}>🗑️</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+          <div onClick={()=>{setModal(true);setEid(null);setForm(ef);}}
+            style={{border:"2px dashed var(--blue3)",borderRadius:16,display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",minHeight:220,cursor:"pointer",transition:"all .3s",gap:9,background:"rgba(59,130,246,.02)"}}
+            onMouseOver={e=>{e.currentTarget.style.borderColor="var(--bluemid)";e.currentTarget.style.background="rgba(59,130,246,.04)";}}
+            onMouseOut={e=>{e.currentTarget.style.borderColor="var(--blue3)";e.currentTarget.style.background="rgba(59,130,246,.02)";}}>
+            <div style={{width:46,height:46,borderRadius:"50%",background:"var(--blue2)",border:"1.5px solid var(--border)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:20,color:"var(--bluemid)"}}>+</div>
+            <span style={{fontSize:13,color:"var(--light)",fontWeight:500}}>Add New Project</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ═══ PRICING ═══ */
+function Pricing(){
+  useObs();
+  return(
+    <section id="pr" style={{background:"var(--bg)",padding:"96px 5%"}}>
+      <div style={{maxWidth:1100,margin:"0 auto"}}>
+        <div className="fi" style={{textAlign:"center",marginBottom:56}}>
+          <div className="stag" style={{marginBottom:14}}>💰 Pricing</div>
+          <h2 style={{fontSize:"clamp(28px,5vw,50px)",fontWeight:800,marginBottom:12}}>Transparent <span className="gt">Global Pricing</span></h2>
+          <p style={{color:"var(--mid)",fontSize:16,maxWidth:420,margin:"0 auto"}}>USD for international. BDT for Bangladesh. No hidden fees.</p>
+        </div>
+        <div className="g3" style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:20,alignItems:"center"}}>
+          {PLANS.map((plan,i)=>(
+            <div key={i} className="fi" style={{
+              background:plan.pop?"linear-gradient(145deg,#EBF4FF,#DBEAFE)":"#fff",
+              border:plan.pop?"2px solid var(--bluemid)":"1.5px solid var(--border)",
+              borderRadius:22,padding:plan.pop?"38px 24px":"30px 20px",
+              transform:plan.pop?"scale(1.04)":"none",transitionDelay:`${i*.1}s`,position:"relative",
+              boxShadow:plan.pop?"0 20px 60px rgba(59,130,246,.16)":"var(--shadow)"}}>
+              {plan.pop&&<div style={{position:"absolute",top:0,left:0,right:0,height:4,background:"linear-gradient(90deg,#3B82F6,#1E40AF)",borderRadius:"22px 22px 0 0"}}/>}
+              {plan.pop&&<div style={{background:"linear-gradient(135deg,#3B82F6,#1E40AF)",color:"#fff",borderRadius:999,padding:"3px 14px",fontSize:10,fontWeight:800,display:"inline-block",marginBottom:12,letterSpacing:1}}>⭐ MOST POPULAR</div>}
+              <h3 style={{fontSize:21,fontWeight:800,marginBottom:8,color:"var(--ink)"}}>{plan.n}</h3>
+              <div style={{fontSize:35,fontWeight:900,color:"var(--coral)",marginBottom:2,fontFamily:"'Outfit',sans-serif"}}>{plan.p}</div>
+              <div style={{fontSize:13,color:"var(--light)",marginBottom:3}}>{plan.loc}</div>
+              <div style={{fontSize:12,color:"var(--light)",marginBottom:22}}>⏱️ {plan.del}</div>
+              <div style={{marginBottom:22}}>
+                {plan.f.map((f,j)=>(
+                  <div key={j} style={{display:"flex",alignItems:"center",gap:9,padding:"5px 0",borderBottom:"1px solid var(--border)"}}>
+                    <span style={{color:"var(--bluemid)",fontSize:12,fontWeight:700}}>✓</span>
+                    <span style={{fontSize:13,color:"var(--mid)"}}>{f}</span>
+                  </div>
+                ))}
+              </div>
+              <button className={plan.pop?"bb":"bob"} style={{width:"100%",padding:"12px",borderRadius:12,fontSize:14}} onClick={()=>document.getElementById("ct")?.scrollIntoView({behavior:"smooth"})}>
+                Get Started →
+              </button>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ═══ PROCESS ═══ */
+function Process(){
+  useObs();
+  return(
+    <section style={{background:"var(--surface)",padding:"96px 5%"}}>
+      <div style={{maxWidth:1200,margin:"0 auto"}}>
+        <div className="fi" style={{textAlign:"center",marginBottom:56}}>
+          <div className="stag" style={{marginBottom:14}}>🗺️ How It Works</div>
+          <h2 style={{fontSize:"clamp(28px,5vw,48px)",fontWeight:800}}>From <span className="gt">Idea to Live</span> in Days</h2>
+        </div>
+        <div className="g4" style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:20,position:"relative"}}>
+          <div style={{position:"absolute",top:37,left:"13%",right:"13%",height:2,background:"linear-gradient(90deg,#3B82F6,#93C5FD,#3B82F6)",opacity:.2}} className="hm"/>
+          {[["💬","01","Contact","Tell us your business idea via form or WhatsApp."],["📋","02","Discovery","We gather brand assets, goals, and requirements."],["⚙️","03","Build","Our team designs and develops your premium site."],["🚀","04","Launch","We configure domain, hosting, and go live!"]].map(([ic,n,t,d],i)=>(
+            <div key={i} className="fi" style={{textAlign:"center",transitionDelay:`${i*.08}s`}}>
+              <div style={{width:74,height:74,borderRadius:"50%",background:"var(--blue2)",border:"2px solid var(--blue3)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:28,margin:"0 auto 16px",position:"relative",zIndex:1,boxShadow:"0 4px 20px rgba(59,130,246,.12)"}}>
+                {ic}
+                <div style={{position:"absolute",top:-8,right:-5,width:22,height:22,borderRadius:"50%",background:"linear-gradient(135deg,#3B82F6,#1E40AF)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:9,fontWeight:800,color:"#fff"}}>{n}</div>
+              </div>
+              <h3 style={{fontSize:16,fontWeight:700,marginBottom:8,color:"var(--ink)"}}>{t}</h3>
+              <p style={{fontSize:13,color:"var(--mid)",lineHeight:1.7}}>{d}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ═══ TESTIMONIALS ═══ */
+function Testimonials(){
+  useObs();
+  const T=[{n:"James Carter",b:"Restaurant Owner, UK",t:"Webus built an incredible site. Reservations up 40%! Best agency I've worked with.",av:"J"},{n:"Priya Sharma",b:"Spa Owner, India",t:"Super fast delivery and the design absolutely blew my mind. Highly recommended!",av:"P"},{n:"Karim Ahmed",b:"Gym Owner, Bangladesh",t:"WhatsApp integration gets us 10+ leads daily. ROI was immediate. Amazing team!",av:"K"},{n:"Sarah Johnson",b:"Clinic Director, USA",t:"Professional, responsive, and the final result exceeded all our expectations.",av:"S"}];
+  return(
+    <section style={{background:"var(--bg)",padding:"96px 5%"}}>
+      <div style={{maxWidth:1200,margin:"0 auto"}}>
+        <div className="fi" style={{textAlign:"center",marginBottom:52}}>
+          <div className="stag" style={{marginBottom:14}}>⭐ Global Reviews</div>
+          <h2 style={{fontSize:"clamp(28px,5vw,48px)",fontWeight:800}}>Clients Worldwide <span className="gt">Love Us</span></h2>
+        </div>
+        <div className="g2" style={{display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:20}}>
+          {T.map((t,i)=>(
+            <div key={i} className="gc fi" style={{padding:"24px 20px",transitionDelay:`${i*.08}s`}}>
+              <div style={{color:"#F59E0B",fontSize:16,marginBottom:12,letterSpacing:2}}>★★★★★</div>
+              <p style={{fontSize:15,lineHeight:1.75,color:"var(--mid)",fontStyle:"italic",marginBottom:18}}>"{t.t}"</p>
+              <div style={{display:"flex",alignItems:"center",gap:12}}>
+                <div style={{width:42,height:42,borderRadius:"50%",background:"linear-gradient(135deg,#3B82F6,#1E40AF)",display:"flex",alignItems:"center",justifyContent:"center",fontWeight:800,fontSize:16,color:"#fff",fontFamily:"'Outfit',sans-serif",flexShrink:0}}>{t.av}</div>
+                <div><div style={{fontWeight:700,fontSize:15,color:"var(--ink)"}}>{t.n}</div><div style={{fontSize:12,color:"var(--light)"}}>{t.b}</div></div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ═══ ABOUT ═══ */
+function About(){
+  useObs();
+  return(
+    <section id="ab" style={{background:"var(--surface)",padding:"96px 5%"}}>
+      <div style={{maxWidth:1200,margin:"0 auto"}}>
+        <div className="g2" style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:56,alignItems:"center"}}>
+          <div className="fi">
+            <div className="stag" style={{marginBottom:18}}>🏢 About Webus</div>
+            <h2 style={{fontSize:"clamp(26px,4.5vw,46px)",fontWeight:800,marginBottom:16,lineHeight:1.15,color:"var(--ink)"}}>Building the <span className="gt">Future</span> of Business Websites — Globally</h2>
+            <p style={{color:"var(--mid)",fontSize:16,lineHeight:1.85,marginBottom:16}}>Based in Bangladesh, serving clients worldwide. We craft premium, high-converting websites that generate real business results.</p>
+            <p style={{color:"var(--mid)",fontSize:16,lineHeight:1.85,marginBottom:28}}>Our team has delivered 50+ websites to businesses in UK, USA, India, Bangladesh, and beyond — each one driving measurable growth.</p>
+            <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:12}}>
+              {[["🌍","Global Reach","15+ countries served"],["⚡","Fast Delivery","Live in 5–21 days"],["💯","Quality First","No shortcuts, ever"],["🔒","Secure & Fast","99.9% uptime guaranteed"]].map(([ic,t,d])=>(
+                <div key={t} style={{background:"var(--blue2)",border:"1px solid var(--border)",borderRadius:12,padding:"13px 15px"}}>
+                  <div style={{fontSize:18,marginBottom:4}}>{ic}</div>
+                  <div style={{color:"var(--bluemid)",fontSize:12,fontWeight:700,marginBottom:2}}>{t}</div>
+                  <div style={{fontSize:12,color:"var(--light)"}}>{d}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="fi" style={{transitionDelay:".18s"}}>
+            <div style={{background:"linear-gradient(145deg,var(--blue2),var(--bg))",border:"1px solid var(--border)",borderRadius:20,padding:32,boxShadow:"0 12px 40px rgba(59,130,246,.1)"}}>
+              <div style={{fontSize:68,textAlign:"center",marginBottom:18}}>🌐</div>
+              <h3 style={{fontSize:21,fontWeight:800,textAlign:"center",marginBottom:7,color:"var(--ink)"}}>"Your Success is Our Portfolio"</h3>
+              <p style={{color:"var(--mid)",fontSize:13,textAlign:"center",lineHeight:1.7,marginBottom:22}}>Every website we build represents our commitment to your growth.</p>
+              <div style={{display:"flex",justifyContent:"center",gap:24,borderTop:"1px solid var(--border)",paddingTop:18}}>
+                {[["50+","Websites"],["15+","Countries"],["98%","Happy"]].map(([n,l])=>(
+                  <div key={l} style={{textAlign:"center"}}>
+                    <div style={{fontSize:22,fontWeight:900,color:"var(--coral)",fontFamily:"'Outfit',sans-serif"}}>{n}</div>
+                    <div style={{fontSize:11,color:"var(--light)"}}>{l}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ═══ CONTACT ═══ */
+function Contact(){
+  useObs();
+  const [form,setForm]=useState({name:"",biz:"",phone:"",email:"",type:"",budget:"",msg:""});
+  const [sent,setSent]=useState(false);
+  return(
+    <section id="ct" style={{background:"var(--bg)",padding:"96px 5%"}}>
+      <div style={{maxWidth:1100,margin:"0 auto"}}>
+        <div className="fi" style={{textAlign:"center",marginBottom:56}}>
+          <div className="stag" style={{marginBottom:14}}>📩 Get In Touch</div>
+          <h2 style={{fontSize:"clamp(28px,5vw,50px)",fontWeight:800,marginBottom:12}}>Start Your <span className="gt">Website Today</span></h2>
+          <p style={{color:"var(--mid)",fontSize:16,maxWidth:400,margin:"0 auto"}}>Response within 2 hours. International clients welcome.</p>
+        </div>
+        <div className="g2" style={{display:"grid",gridTemplateColumns:"1fr 1.2fr",gap:40}}>
+          <div className="fi">
+            {[["📞","Phone","+880 1700-000000","tel:+8801700000000"],["💬","WhatsApp","Chat Instantly","https://wa.me/8801700000000"],["✉️","Email","hello@webus.agency","mailto:hello@webus.agency"],["🌍","Serving","Worldwide — All Time Zones","#"]].map(([ic,l,v,h])=>(
+              <a key={l} href={h} target="_blank" rel="noreferrer" style={{display:"flex",gap:13,alignItems:"center",marginBottom:20,textDecoration:"none"}}>
+                <div style={{width:46,height:46,borderRadius:12,background:"var(--blue2)",border:"1px solid var(--border)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:20,flexShrink:0}}>{ic}</div>
+                <div>
+                  <div style={{fontSize:10,color:"var(--bluemid)",letterSpacing:1.5,textTransform:"uppercase",fontWeight:700,marginBottom:2}}>{l}</div>
+                  <div style={{fontSize:14,color:"var(--ink)",fontWeight:500}}>{v}</div>
+                </div>
+              </a>
+            ))}
+            <div style={{display:"flex",gap:10,marginTop:8,flexWrap:"wrap"}}>
+              <a href="tel:+8801700000000" className="bp" style={{padding:"11px 20px",borderRadius:9,fontSize:13,textDecoration:"none"}}>📞 Call Now</a>
+              <a href="https://wa.me/8801700000000" target="_blank" rel="noreferrer" style={{padding:"11px 18px",borderRadius:9,fontSize:13,textDecoration:"none",background:"#25D366",color:"#fff",fontFamily:"'Outfit',sans-serif",fontWeight:700}}>💬 WhatsApp</a>
+            </div>
+          </div>
+          <div className="fi" style={{transitionDelay:".18s"}}>
+            {sent?(
+              <div style={{background:"rgba(16,185,129,.06)",border:"1px solid rgba(16,185,129,.2)",borderRadius:18,padding:40,textAlign:"center",height:"100%",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center"}}>
+                <div style={{fontSize:52,marginBottom:12}}>✅</div>
+                <h3 style={{fontSize:20,fontWeight:700,marginBottom:7,color:"var(--ink)"}}>Message Sent!</h3>
+                <p style={{color:"var(--mid)",fontSize:14}}>We'll contact you within 2 hours.</p>
+              </div>
+            ):(
+              <div style={{background:"#fff",border:"1px solid var(--border)",borderRadius:18,padding:"26px 22px",boxShadow:"var(--shadow)"}}>
+                <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:11,marginBottom:11}}>
+                  <div><label>Name *</label><input placeholder="Your name" value={form.name} onChange={e=>setForm({...form,name:e.target.value})}/></div>
+                  <div><label>Business</label><input placeholder="Business name" value={form.biz} onChange={e=>setForm({...form,biz:e.target.value})}/></div>
+                  <div><label>Phone *</label><input placeholder="+880..." value={form.phone} onChange={e=>setForm({...form,phone:e.target.value})}/></div>
+                  <div><label>Email</label><input placeholder="email@..." value={form.email} onChange={e=>setForm({...form,email:e.target.value})}/></div>
+                </div>
+                <div style={{marginBottom:11}}><label>Website Type</label>
+                  <select value={form.type} onChange={e=>setForm({...form,type:e.target.value})}>
+                    <option value="">Select type</option>
+                    {["Restaurant","Gym","Salon","Clinic","Business","E-Commerce","Landing Page","Other"].map(t=><option key={t}>{t}</option>)}
+                  </select>
+                </div>
+                <div style={{marginBottom:12}}><label>Budget</label>
+                  <select value={form.budget} onChange={e=>setForm({...form,budget:e.target.value})}>
+                    <option value="">Select budget</option>
+                    <option>Starter ($99 / ৳8,000)</option><option>Professional ($199 / ৳18,000)</option><option>Enterprise ($349 / ৳35,000+)</option><option>Not sure yet</option>
+                  </select>
+                </div>
+                <div style={{marginBottom:14}}><label>Message</label><textarea placeholder="Tell us about your project..." rows={3} value={form.msg} onChange={e=>setForm({...form,msg:e.target.value})} style={{resize:"none"}}/></div>
+                <button className="bb" style={{width:"100%",padding:"13px",borderRadius:12,fontSize:15}} onClick={()=>{if(form.name&&form.phone)setSent(true);}}>🚀 Send My Request</button>
+                <p style={{fontSize:11,color:"var(--light)",textAlign:"center",marginTop:9}}>Response within 2 hours. International welcome.</p>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ═══ FOOTER ═══ */
+function Footer({nav}){
+  const go=id=>document.getElementById(id)?.scrollIntoView({behavior:"smooth"});
+  return(
+    <footer style={{background:"#0f172a",padding:"56px 5% 22px"}}>
+      <div style={{maxWidth:1200,margin:"0 auto"}}>
+        <div style={{display:"grid",gridTemplateColumns:"2fr 1fr 1fr 1fr",gap:36,marginBottom:40}} className="g4">
+          <div>
+            <Logo size={28} textSize={17} onDark/>
+            <p style={{color:"rgba(255,255,255,.35)",fontSize:13,lineHeight:1.7,maxWidth:250,margin:"14px 0 18px"}}>International web agency building premium, high-converting websites worldwide.</p>
+            <div style={{display:"flex",gap:7}}>
+              {["🌐","f","in","🐦"].map(s=>(
+                <a key={s} href="#" style={{width:32,height:32,borderRadius:8,background:"rgba(255,255,255,.06)",border:"1px solid rgba(255,255,255,.09)",display:"flex",alignItems:"center",justifyContent:"center",color:"rgba(147,197,253,.65)",textDecoration:"none",fontSize:13}}>{s}</a>
+              ))}
+            </div>
+          </div>
+          {[{t:"Services",l:[["Web Design","sv"],["Development","sv"],["Landing Pages","sv"],["SEO","sv"],["E-Commerce","sv"]]},
+            {t:"Company",l:[["About Us","ab"],["Portfolio","pf"],["Pricing","pr"],["Contact","ct"]]},
+            {t:"Account",l:[["Sign In","login"],["Client Portal","client"],["Admin Panel","admin"]]},
+          ].map(({t,l})=>(
+            <div key={t}>
+              <div style={{fontSize:11,color:"rgba(147,197,253,.65)",fontWeight:700,letterSpacing:1.5,textTransform:"uppercase",marginBottom:16}}>{t}</div>
+              {l.map(([label,id])=>(
+                <div key={label} onClick={()=>["login","client","admin"].includes(id)?nav(id):go(id)} style={{color:"rgba(255,255,255,.32)",fontSize:13,padding:"4px 0",cursor:"pointer",transition:"color .18s"}}
+                  onMouseOver={e=>e.target.style.color="var(--coral)"} onMouseOut={e=>e.target.style.color="rgba(255,255,255,.32)"}>{label}</div>
+              ))}
+            </div>
+          ))}
+        </div>
+        <div style={{borderTop:"1px solid rgba(255,255,255,.06)",paddingTop:20,display:"flex",justifyContent:"space-between",flexWrap:"wrap",gap:8}}>
+          <div style={{color:"rgba(255,255,255,.18)",fontSize:12}}>© 2025 Webus Agency. All rights reserved.</div>
+          <div style={{color:"rgba(255,255,255,.18)",fontSize:12}}>🌍 Serving clients worldwide · Made with ❤️</div>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+/* ═══ ADMIN DASHBOARD ═══ */
+function Admin({nav}){
+  const {user,logout}=useAuth();
+  const [tab,setTab]=useState("dash");
+  const [mob,setMob]=useState(false);
+  const TABS=[{id:"dash",ic:"📊",l:"Dashboard"},{id:"leads",ic:"🎯",l:"Leads"},{id:"clients",ic:"👥",l:"Clients"},{id:"proj",ic:"🗂️",l:"Projects"},{id:"pay",ic:"💰",l:"Payments"},{id:"logs",ic:"📋",l:"Activity"},{id:"content",ic:"✏️",l:"Content"},{id:"settings",ic:"⚙️",l:"Settings"}];
+  const [leads,setLeads]=useState(LEADS_D);
+  const [projs,setProjs]=useState(PROJECTS_D);
+  const [pays,setPays]=useState(PAYS_D);
+  const [clients,setClients]=useState(CLIENTS_D);
+  const [addCli,setAddCli]=useState(false);
+  const [nc,setNc]=useState({name:"",email:"",biz:"",domain:"",phone:""});
+  const [svcs,setSvcs]=useState([{id:1,t:"UI/UX Design",d:"World-class designs that capture attention."},{id:2,t:"Web Development",d:"Fast, secure, scalable websites."},{id:3,t:"Landing Pages",d:"Conversion-engineered pages."}]);
+
+  const Sidebar=({onClose})=>(
+    <div style={{padding:"18px 0"}}>
+      <div style={{padding:"0 18px 18px",borderBottom:"1px solid var(--border)",marginBottom:10,display:"flex",justifyContent:"space-between",alignItems:"center"}}>
+        <div><Logo size={26} textSize={15}/><div style={{fontSize:9,color:"var(--light)",marginTop:4,letterSpacing:1.5,textTransform:"uppercase"}}>Admin Panel</div></div>
+        {onClose&&<button onClick={onClose} style={{background:"none",border:"none",fontSize:19,cursor:"pointer",color:"var(--mid)"}}>✕</button>}
+      </div>
+      {TABS.map(t=>(
+        <div key={t.id} className={`si ${tab===t.id?"act":""}`} style={{margin:"2px 9px"}} onClick={()=>{setTab(t.id);onClose&&onClose();}}>
+          <span style={{fontSize:16}}>{t.ic}</span>{t.l}
+        </div>
+      ))}
+      <div style={{padding:"12px 18px",marginTop:10,borderTop:"1px solid var(--border)"}}>
+        <button onClick={()=>nav("home")} style={{background:"none",border:"none",color:"var(--mid)",cursor:"pointer",fontSize:12,marginBottom:8,display:"flex",alignItems:"center",gap:5}}>🌐 View Website</button>
+        <button onClick={()=>{logout();nav("home");}} style={{background:"none",border:"none",color:"#DC2626",cursor:"pointer",fontSize:12,display:"flex",alignItems:"center",gap:5}}>🚪 Logout</button>
+      </div>
+    </div>
+  );
+
+  const stageMap={Planning:20,"In Progress":50,Review:80,Delivered:100};
+
+  const panels={
+    dash:(
+      <div>
+        <h1 style={{fontSize:25,fontWeight:800,marginBottom:4,color:"var(--ink)"}}>Dashboard</h1>
+        <p style={{color:"var(--mid)",fontSize:14,marginBottom:22}}>Welcome back, {user?.name}!</p>
+        <div className="g4" style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:14,marginBottom:22}}>
+          {[["🎯","Leads",leads.length,"#E8736B"],["🗂️","Projects",projs.length,"#3B82F6"],["💰","Revenue","$8.2K","#10B981"],["✅","Delivered",projs.filter(p=>p.stage==="Delivered").length,"#8B5CF6"]].map(([ic,l,v,c])=>(
+            <div key={l} className="dc" style={{border:`1px solid ${c}20`}}>
+              <div style={{display:"flex",justifyContent:"space-between",marginBottom:12}}><span style={{fontSize:22}}>{ic}</span><div style={{width:8,height:8,borderRadius:"50%",background:c,boxShadow:`0 0 8px ${c}`}}/></div>
+              <div style={{fontSize:28,fontWeight:900,color:c,fontFamily:"'Outfit',sans-serif",marginBottom:2}}>{v}</div>
+              <div style={{fontSize:12,color:"var(--mid)"}}>{l}</div>
+            </div>
+          ))}
+        </div>
+        <div style={{display:"grid",gridTemplateColumns:"1.4fr 1fr",gap:18}} className="g2">
+          <div className="dc">
+            <h3 style={{fontSize:15,fontWeight:700,marginBottom:14,color:"var(--ink)"}}>Recent Leads</h3>
+            {leads.slice(0,5).map(l=>(
+              <div key={l.id} style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"8px 0",borderBottom:"1px solid var(--border)"}}>
+                <div style={{display:"flex",alignItems:"center",gap:8}}><span style={{fontSize:16}}>{l.flag}</span><div><div style={{fontSize:13,fontWeight:600,color:"var(--ink)"}}>{l.name}</div><div style={{fontSize:11,color:"var(--light)"}}>{l.biz}</div></div></div>
+                <div style={{display:"flex",gap:7,alignItems:"center"}}><span style={{fontSize:12,fontWeight:700,color:"var(--coral)"}}>{l.budget}</span><SB s={l.status}/></div>
+              </div>
+            ))}
+          </div>
+          <div className="dc">
+            <h3 style={{fontSize:15,fontWeight:700,marginBottom:14,color:"var(--ink)"}}>Projects</h3>
+            {projs.map(p=>(
+              <div key={p.id} style={{marginBottom:14}}>
+                <div style={{display:"flex",justifyContent:"space-between",marginBottom:5}}><div style={{fontSize:12,fontWeight:600,color:"var(--ink)"}}>{p.title}</div><span style={{fontSize:11,fontWeight:700,color:"var(--coral)"}}>{p.prog}%</span></div>
+                <div style={{background:"var(--blue2)",borderRadius:999,height:6,overflow:"hidden"}}><div style={{height:"100%",width:`${p.prog}%`,background:"linear-gradient(90deg,#3B82F6,#1E40AF)",borderRadius:999}}/></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    ),
+    leads:(
+      <div>
+        <h1 style={{fontSize:24,fontWeight:800,color:"var(--ink)",marginBottom:20}}>Leads <span style={{fontSize:14,color:"var(--mid)",fontWeight:400}}>({leads.length} total)</span></h1>
+        <div className="dc" style={{padding:0,overflow:"hidden"}}>
+          <div style={{overflowX:"auto"}}>
+            <table style={{width:"100%",borderCollapse:"collapse",fontSize:13,minWidth:580}}>
+              <thead><tr style={{background:"var(--blue1)",borderBottom:"1px solid var(--border)"}}>
+                {["","Name","Phone","Business","Budget","Status","Update"].map(h=><th key={h} style={{textAlign:"left",padding:"11px 14px",color:"var(--mid)",fontSize:11,letterSpacing:1,textTransform:"uppercase",fontWeight:700}}>{h}</th>)}
+              </tr></thead>
+              <tbody>{leads.map(l=>(
+                <tr key={l.id} style={{borderBottom:"1px solid var(--border)"}}>
+                  <td style={{padding:"10px 14px",fontSize:17}}>{l.flag}</td>
+                  <td style={{padding:"10px 14px",fontWeight:600,color:"var(--ink)"}}>{l.name}</td>
+                  <td style={{padding:"10px 14px",color:"var(--mid)",fontSize:12}}>{l.phone}</td>
+                  <td style={{padding:"10px 14px",color:"var(--mid)"}}>{l.biz}</td>
+                  <td style={{padding:"10px 14px",fontWeight:700,color:"var(--coral)"}}>{l.budget}</td>
+                  <td style={{padding:"10px 14px"}}><SB s={l.status}/></td>
+                  <td style={{padding:"10px 14px"}}>
+                    <select value={l.status} onChange={e=>setLeads(p=>p.map(x=>x.id===l.id?{...x,status:e.target.value}:x))} style={{background:"var(--blue1)",border:"1px solid var(--border)",borderRadius:8,padding:"5px 9px",color:"var(--ink)",fontSize:12,width:"auto",cursor:"pointer",boxShadow:"none"}}>
+                      {["New","Contacted","Won","Lost"].map(s=><option key={s}>{s}</option>)}
+                    </select>
+                  </td>
+                </tr>
+              ))}</tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    ),
+    clients:(
+      <div>
+        <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:20,flexWrap:"wrap",gap:10}}>
+          <h1 style={{fontSize:24,fontWeight:800,color:"var(--ink)"}}>Clients</h1>
+          <button className="bp" style={{padding:"9px 18px",borderRadius:9,fontSize:13}} onClick={()=>setAddCli(true)}>+ Add Client</button>
+        </div>
+        {addCli&&(
+          <div style={{position:"fixed",inset:0,background:"rgba(0,0,0,.5)",zIndex:700,display:"flex",alignItems:"center",justifyContent:"center",padding:20,backdropFilter:"blur(4px)"}} onClick={e=>e.target===e.currentTarget&&setAddCli(false)}>
+            <div style={{background:"#fff",borderRadius:20,padding:"26px 22px",width:"100%",maxWidth:440,boxShadow:"0 24px 80px rgba(0,0,0,.2)",animation:"sc-in .28s ease"}}>
+              <h3 style={{fontSize:17,fontWeight:700,marginBottom:16,color:"var(--ink)"}}>Add New Client</h3>
+              <div style={{display:"grid",gap:11}}>
+                {[["Name *","name","Client full name"],["Email *","email","client@email.com"],["Business","biz","Business name"],["Domain","domain","client-site.com"],["Phone","phone","+880..."]].map(([l,k,ph])=>(
+                  <div key={k}><label>{l}</label><input placeholder={ph} value={nc[k]} onChange={e=>setNc({...nc,[k]:e.target.value})}/></div>
+                ))}
+              </div>
+              <div style={{display:"flex",gap:10,marginTop:16}}>
+                <button className="bb" style={{flex:1,padding:"11px",borderRadius:10,fontSize:14}} onClick={()=>{if(!nc.name||!nc.email)return;setClients(p=>[...p,{...nc,id:Date.now(),hosting:"TBD",status:"Active",joined:new Date().toISOString().slice(0,10)}]);setNc({name:"",email:"",biz:"",domain:"",phone:""});setAddCli(false);}}>Add Client</button>
+                <button className="bob" style={{padding:"11px 16px",borderRadius:10,fontSize:14}} onClick={()=>setAddCli(false)}>Cancel</button>
+              </div>
+            </div>
+          </div>
+        )}
+        <div style={{display:"grid",gap:14}}>
+          {clients.map(c=>(
+            <div key={c.id} className="dc">
+              <div style={{display:"flex",justifyContent:"space-between",flexWrap:"wrap",gap:10}}>
+                <div>
+                  <div style={{fontSize:15,fontWeight:700,color:"var(--ink)",marginBottom:2}}>{c.name}</div>
+                  <div style={{fontSize:13,color:"var(--mid)",marginBottom:10}}>{c.biz} · {c.email}</div>
+                  <div style={{display:"flex",gap:16,flexWrap:"wrap"}}>
+                    {[["🌐","Domain",c.domain||"—"],["🖥️","Hosting",c.hosting||"TBD"],["📅","Joined",c.joined],["📞","Phone",c.phone||"—"]].map(([ic,l,v])=>(
+                      <div key={l}><div style={{fontSize:10,color:"var(--bluemid)",letterSpacing:1,textTransform:"uppercase",fontWeight:700,marginBottom:1}}>{ic} {l}</div><div style={{fontSize:13,color:"var(--ink)",fontWeight:500}}>{v}</div></div>
+                    ))}
+                  </div>
+                </div>
+                <div style={{display:"flex",flexDirection:"column",gap:8,alignItems:"flex-end"}}>
+                  <SB s={c.status}/>
+                  <button onClick={()=>nav("client")} style={{background:"var(--blue2)",border:"1px solid var(--border)",color:"var(--bluemid)",borderRadius:8,padding:"5px 12px",cursor:"pointer",fontSize:12,fontWeight:600}}>View Portal →</button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    ),
+    proj:(
+      <div>
+        <h1 style={{fontSize:24,fontWeight:800,color:"var(--ink)",marginBottom:20}}>Projects</h1>
+        {projs.map(p=>(
+          <div key={p.id} className="dc" style={{marginBottom:14}}>
+            <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:12,flexWrap:"wrap",gap:10}}>
+              <div><div style={{fontSize:15,fontWeight:700,color:"var(--ink)"}}>{p.title}</div><div style={{fontSize:12,color:"var(--mid)",marginTop:2}}>{p.client} · Due {p.deadline}</div></div>
+              <select value={p.stage} onChange={e=>setProjs(prev=>prev.map(x=>x.id===p.id?{...x,stage:e.target.value,prog:stageMap[e.target.value]||x.prog}:x))}
+                style={{background:"var(--blue1)",border:"1px solid var(--border)",borderRadius:9,padding:"6px 11px",color:"var(--ink)",fontSize:13,width:"auto",cursor:"pointer",boxShadow:"none"}}>
+                {["Planning","In Progress","Review","Delivered"].map(s=><option key={s}>{s}</option>)}
+              </select>
+            </div>
+            <div style={{background:"var(--blue2)",borderRadius:999,height:8,overflow:"hidden",marginBottom:4}}>
+              <div style={{height:"100%",width:`${p.prog}%`,background:"linear-gradient(90deg,#3B82F6,#1E40AF)",borderRadius:999,transition:"width .5s"}}/>
+            </div>
+            <div style={{display:"flex",justifyContent:"space-between",marginTop:5}}>
+              <span style={{fontSize:12,color:"var(--mid)"}}>Progress</span>
+              <span style={{fontSize:12,color:"var(--bluemid)",fontWeight:700}}>{p.prog}%</span>
+            </div>
+            {p.notes&&<div style={{marginTop:12,background:"var(--blue1)",border:"1px solid var(--border)",borderRadius:9,padding:"9px 13px",fontSize:12,color:"var(--mid)"}}>📝 {p.notes}</div>}
+          </div>
+        ))}
+      </div>
+    ),
+    pay:(
+      <div>
+        <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:20,flexWrap:"wrap",gap:10}}>
+          <h1 style={{fontSize:24,fontWeight:800,color:"var(--ink)"}}>Payments</h1>
+          <div style={{background:"rgba(16,185,129,.08)",border:"1px solid rgba(16,185,129,.2)",borderRadius:12,padding:"9px 18px"}}>
+            <div style={{fontSize:10,color:"#059669",letterSpacing:1,textTransform:"uppercase",fontWeight:700}}>Total Collected</div>
+            <div style={{fontSize:20,fontWeight:900,color:"#059669",fontFamily:"'Outfit',sans-serif"}}>$99 + ৳18,000</div>
+          </div>
+        </div>
+        <div className="dc" style={{padding:0,overflow:"hidden"}}>
+          <div style={{overflowX:"auto"}}>
+            <table style={{width:"100%",borderCollapse:"collapse",fontSize:13,minWidth:560}}>
+              <thead><tr style={{background:"var(--blue1)",borderBottom:"1px solid var(--border)"}}>
+                {["Invoice","Client","Amount","Paid","Balance","Status","Update"].map(h=><th key={h} style={{textAlign:"left",padding:"11px 14px",color:"var(--mid)",fontSize:11,letterSpacing:1,textTransform:"uppercase",fontWeight:700}}>{h}</th>)}
+              </tr></thead>
+              <tbody>{pays.map(p=>(
+                <tr key={p.id} style={{borderBottom:"1px solid var(--border)"}}>
+                  <td style={{padding:"10px 14px",color:"var(--coral)",fontWeight:700,fontSize:12}}>{p.id}</td>
+                  <td style={{padding:"10px 14px",fontWeight:600,color:"var(--ink)"}}>{p.client}</td>
+                  <td style={{padding:"10px 14px",fontWeight:700}}>{p.cur}{p.amount.toLocaleString()}</td>
+                  <td style={{padding:"10px 14px",color:"#059669",fontWeight:700}}>{p.cur}{p.paid.toLocaleString()}</td>
+                  <td style={{padding:"10px 14px",color:p.amount-p.paid>0?"#DC2626":"#059669",fontWeight:700}}>{p.cur}{(p.amount-p.paid).toLocaleString()}</td>
+                  <td style={{padding:"10px 14px"}}><SB s={p.status}/></td>
+                  <td style={{padding:"10px 14px"}}>
+                    <select value={p.status} onChange={e=>setPays(prev=>prev.map(x=>x.id===p.id?{...x,status:e.target.value}:x))} style={{background:"var(--blue1)",border:"1px solid var(--border)",borderRadius:8,padding:"5px 9px",color:"var(--ink)",fontSize:12,width:"auto",cursor:"pointer",boxShadow:"none"}}>
+                      {["Pending","Partial","Paid"].map(s=><option key={s}>{s}</option>)}
+                    </select>
+                  </td>
+                </tr>
+              ))}</tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    ),
+    logs:(
+      <div>
+        <h1 style={{fontSize:24,fontWeight:800,color:"var(--ink)",marginBottom:20}}>Activity Logs</h1>
+        <div className="dc">
+          {LOGS_D.map((l,i)=>(
+            <div key={l.id} style={{display:"flex",gap:13,alignItems:"flex-start",padding:"12px 0",borderBottom:i<LOGS_D.length-1?"1px solid var(--border)":"none"}}>
+              <div style={{width:40,height:40,borderRadius:11,background:"var(--blue2)",border:"1px solid var(--border)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:18,flexShrink:0}}>{l.ic}</div>
+              <div style={{flex:1}}>
+                <div style={{fontSize:14,fontWeight:600,color:"var(--ink)"}}>{l.act}</div>
+                <div style={{fontSize:12,color:"var(--mid)",marginTop:2}}>{l.detail}</div>
+              </div>
+              <div style={{fontSize:11,color:"var(--light)",whiteSpace:"nowrap"}}>{l.time}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    ),
+    content:(
+      <div>
+        <h1 style={{fontSize:24,fontWeight:800,color:"var(--ink)",marginBottom:20}}>Content Management</h1>
+        <div className="dc" style={{marginBottom:16}}>
+          <h3 style={{fontSize:15,fontWeight:700,color:"var(--ink)",marginBottom:14,display:"flex",justifyContent:"space-between",alignItems:"center"}}>
+            🛠️ Services
+            <button className="bp" style={{padding:"6px 14px",borderRadius:8,fontSize:12}} onClick={()=>setSvcs(p=>[...p,{id:Date.now(),t:"New Service",d:"Description here"}])}>+ Add</button>
+          </h3>
+          {svcs.map(s=>(
+            <div key={s.id} style={{display:"grid",gridTemplateColumns:"1fr 1.5fr auto",gap:10,marginBottom:10,alignItems:"center"}}>
+              <input defaultValue={s.t} onBlur={e=>setSvcs(p=>p.map(x=>x.id===s.id?{...x,t:e.target.value}:x))} style={{fontSize:13,fontWeight:600}}/>
+              <input defaultValue={s.d} onBlur={e=>setSvcs(p=>p.map(x=>x.id===s.id?{...x,d:e.target.value}:x))} style={{fontSize:12}}/>
+              <button onClick={()=>setSvcs(p=>p.filter(x=>x.id!==s.id))} style={{background:"rgba(220,38,38,.06)",border:"1px solid rgba(220,38,38,.18)",color:"#DC2626",borderRadius:7,padding:"7px 11px",cursor:"pointer",fontSize:12,fontWeight:600,whiteSpace:"nowrap"}}>Remove</button>
+            </div>
+          ))}
+          <button className="bb" style={{padding:"9px 20px",borderRadius:9,fontSize:13,marginTop:8}}>💾 Save Services</button>
+        </div>
+        <div className="dc" style={{marginBottom:16}}>
+          <h3 style={{fontSize:15,fontWeight:700,color:"var(--ink)",marginBottom:14}}>💰 Pricing Plans</h3>
+          {PLANS.map((p,i)=>(
+            <div key={i} style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:10,marginBottom:10}} className="g3">
+              <div><label>Plan Name</label><input defaultValue={p.n}/></div>
+              <div><label>Price (USD)</label><input defaultValue={p.p}/></div>
+              <div><label>Delivery</label><input defaultValue={p.del}/></div>
+            </div>
+          ))}
+          <button className="bb" style={{padding:"9px 20px",borderRadius:9,fontSize:13}}>💾 Save Pricing</button>
+        </div>
+        <div className="dc">
+          <h3 style={{fontSize:15,fontWeight:700,color:"var(--ink)",marginBottom:14}}>📞 Contact Info</h3>
+          <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:12}} className="g2">
+            {[["Agency Name","Webus"],["Phone","+880 1700-000000"],["WhatsApp","8801700000000"],["Email","hello@webus.agency"],["Address","Dhaka, Bangladesh"],["Admin Email","nazmulhasanramim123@gmail.com"]].map(([l,v])=>(
+              <div key={l}><label>{l}</label><input defaultValue={v}/></div>
+            ))}
+          </div>
+          <button className="bb" style={{padding:"9px 20px",borderRadius:9,fontSize:13,marginTop:14}}>💾 Save Info</button>
+        </div>
+      </div>
+    ),
+    settings:(
+      <div>
+        <h1 style={{fontSize:24,fontWeight:800,color:"var(--ink)",marginBottom:20}}>Settings</h1>
+        <div className="dc" style={{marginBottom:16}}>
+          <h3 style={{fontSize:15,fontWeight:700,marginBottom:16,paddingBottom:11,borderBottom:"1px solid var(--border)",color:"var(--ink)"}}>Agency Configuration</h3>
+          <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:12}} className="g2">
+            {[["Agency Name","Webus"],["Tagline","Premium Web Agency"],["Phone","+880 1700-000000"],["WhatsApp","8801700000000"],["Email","hello@webus.agency"],["Address","Dhaka, Bangladesh"]].map(([l,v])=>(
+              <div key={l}><label>{l}</label><input defaultValue={v}/></div>
+            ))}
+          </div>
+          <button className="bb" style={{padding:"10px 22px",borderRadius:9,fontSize:13,marginTop:16}}>💾 Save Settings</button>
+        </div>
+        <div className="dc">
+          <h3 style={{fontSize:15,fontWeight:700,marginBottom:14,paddingBottom:11,borderBottom:"1px solid var(--border)",color:"var(--ink)"}}>Security</h3>
+          <div style={{display:"grid",gap:12}}>
+            <div><label>Admin Login Email</label><input defaultValue="nazmulhasanramim123@gmail.com"/></div>
+            <div><label>Current Password</label><input type="password" placeholder="Current password"/></div>
+            <div><label>New Password</label><input type="password" placeholder="New password"/></div>
+            <div><label>Confirm New Password</label><input type="password" placeholder="Confirm password"/></div>
+          </div>
+          <button className="bp" style={{padding:"10px 22px",borderRadius:9,fontSize:13,marginTop:14}}>🔒 Update Password</button>
+        </div>
+      </div>
+    ),
+  };
+
+  return(
+    <div style={{display:"flex",minHeight:"100vh",background:"var(--bg)"}}>
+      {/* Desktop sidebar */}
+      <div style={{width:224,background:"#fff",borderRight:"1px solid var(--border)",flexShrink:0,position:"fixed",top:0,left:0,bottom:0,zIndex:100,overflowY:"auto",boxShadow:"2px 0 12px rgba(59,130,246,.07)"}} className="hm">
+        <Sidebar/>
+      </div>
+      {/* Mobile drawer */}
+      {mob&&(
+        <div style={{position:"fixed",inset:0,zIndex:200,background:"rgba(0,0,0,.4)"}} onClick={()=>setMob(false)}>
+          <div style={{width:240,height:"100%",background:"#fff",boxShadow:"4px 0 30px rgba(0,0,0,.15)",overflowY:"auto"}} onClick={e=>e.stopPropagation()}>
+            <Sidebar onClose={()=>setMob(false)}/>
+          </div>
+        </div>
+      )}
+      <div style={{flex:1,marginLeft:224,display:"flex",flexDirection:"column"}} className="adm">
+        <style>{`@media(max-width:768px){.adm{margin-left:0!important;}}`}</style>
+        <div style={{background:"#fff",borderBottom:"1px solid var(--border)",padding:"0 24px",height:62,display:"flex",alignItems:"center",justifyContent:"space-between",position:"sticky",top:0,zIndex:50,boxShadow:"0 2px 8px rgba(59,130,246,.07)"}}>
+          <div style={{display:"flex",alignItems:"center",gap:10}}>
+            <button className="hmb2" onClick={()=>setMob(true)} style={{display:"none",background:"var(--blue2)",border:"1px solid var(--border)",borderRadius:8,padding:"7px 10px",cursor:"pointer",fontSize:18,color:"var(--bluemid)"}}>☰</button>
+            <style>{`@media(max-width:768px){.hmb2{display:flex!important;}}`}</style>
+            <span style={{fontSize:14,fontWeight:600,color:"var(--ink)"}}>{user?.name}</span>
+            <span style={{background:"rgba(59,130,246,.1)",border:"1px solid rgba(59,130,246,.25)",color:"var(--bluemid)",borderRadius:999,padding:"2px 10px",fontSize:10,fontWeight:700,letterSpacing:1,textTransform:"uppercase"}}>Admin</span>
+          </div>
+          <div style={{display:"flex",gap:9}}>
+            <button onClick={()=>nav("home")} style={{background:"var(--blue2)",border:"none",borderRadius:8,padding:"7px 14px",color:"var(--bluemid)",cursor:"pointer",fontSize:12,fontWeight:600}}>🌐 Website</button>
+            <button onClick={()=>{logout();nav("home");}} style={{background:"rgba(220,38,38,.07)",border:"1px solid rgba(220,38,38,.18)",borderRadius:8,padding:"7px 14px",color:"#DC2626",cursor:"pointer",fontSize:12,fontWeight:600}}>Logout</button>
+          </div>
+        </div>
+        <div style={{padding:"24px",flex:1}}>{panels[tab]}</div>
+      </div>
+    </div>
+  );
+}
+
+/* ═══ CLIENT DASHBOARD ═══ */
+function Client({nav}){
+  const {user,logout}=useAuth();
+  const [tab,setTab]=useState("home");
+  const [mob,setMob]=useState(false);
+  const TABS=[{id:"home",ic:"🏠",l:"My Project"},{id:"pay",ic:"💰",l:"Payments"},{id:"support",ic:"💬",l:"Support"}];
+  // Strict isolation — only show data matching user's clientId
+  const myProj=user?.cid?PROJECTS_D.find(p=>p.cid===user.cid)||null:null;
+  const myPay=user?.cid?PAYS_D.find(p=>p.cid===user.cid)||null:null;
+  const myClient=user?.cid?CLIENTS_D.find(c=>c.id===user.cid)||null:null;
+  const stages=["Planning","In Progress","Review","Delivered"];
+  const ci=myProj?stages.indexOf(myProj.stage):-1;
+
+  const Sidebar=({onClose})=>(
+    <div style={{padding:"18px 0"}}>
+      <div style={{padding:"0 16px 16px",borderBottom:"1px solid var(--border)",marginBottom:10,display:"flex",justifyContent:"space-between",alignItems:"center"}}>
+        <div><Logo size={24} textSize={14}/><div style={{fontSize:9,color:"var(--light)",marginTop:4,letterSpacing:1.5,textTransform:"uppercase"}}>Client Portal</div></div>
+        {onClose&&<button onClick={onClose} style={{background:"none",border:"none",fontSize:19,cursor:"pointer",color:"var(--mid)"}}>✕</button>}
+      </div>
+      {TABS.map(t=>(
+        <div key={t.id} className={`si ${tab===t.id?"act":""}`} style={{margin:"2px 8px"}} onClick={()=>{setTab(t.id);onClose&&onClose();}}>
+          <span style={{fontSize:16}}>{t.ic}</span>{t.l}
+        </div>
+      ))}
+      <div style={{padding:"12px 16px",marginTop:10,borderTop:"1px solid var(--border)"}}>
+        <button onClick={()=>nav("home")} style={{background:"none",border:"none",color:"var(--mid)",cursor:"pointer",fontSize:12,marginBottom:8,display:"flex",alignItems:"center",gap:5}}>🌐 Website</button>
+        <button onClick={()=>{logout();nav("home");}} style={{background:"none",border:"none",color:"#DC2626",cursor:"pointer",fontSize:12,display:"flex",alignItems:"center",gap:5}}>🚪 Logout</button>
+      </div>
+    </div>
+  );
+
+  const panels={
+    home:(
+      <div>
+        <h1 style={{fontSize:24,fontWeight:800,color:"var(--ink)",marginBottom:4}}>My Project</h1>
+        <p style={{color:"var(--mid)",fontSize:14,marginBottom:20}}>Track your website progress here.</p>
+        {myProj?(
+          <>
+            <div style={{background:"linear-gradient(145deg,var(--blue1),var(--blue2))",border:"1.5px solid var(--border)",borderRadius:20,padding:"24px 22px",marginBottom:18,boxShadow:"0 8px 32px rgba(59,130,246,.1)"}}>
+              <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:16,flexWrap:"wrap",gap:10}}>
+                <div>
+                  <h2 style={{fontSize:18,fontWeight:800,color:"var(--ink)",marginBottom:3}}>{myProj.title}</h2>
+                  <div style={{fontSize:13,color:"var(--mid)"}}>{myClient?.biz} · {myClient?.domain||"Domain pending"}</div>
+                </div>
+                <SB s={myProj.stage}/>
+              </div>
+              <div style={{marginBottom:14}}>
+                <div style={{display:"flex",justifyContent:"space-between",marginBottom:6}}><span style={{fontSize:13,fontWeight:600,color:"var(--mid)"}}>Overall Progress</span><span style={{fontSize:13,fontWeight:800,color:"var(--bluemid)"}}>{myProj.prog}%</span></div>
+                <div style={{background:"#fff",borderRadius:999,height:10,overflow:"hidden",boxShadow:"inset 0 1px 3px rgba(0,0,0,.08)"}}>
+                  <div style={{height:"100%",width:`${myProj.prog}%`,background:"linear-gradient(90deg,#3B82F6,#1E40AF)",borderRadius:999,transition:"width .5s",boxShadow:"0 2px 8px rgba(59,130,246,.3)"}}/>
+                </div>
+              </div>
+              <div style={{display:"flex",flexWrap:"wrap",gap:5}}>
+                {stages.map((s,i)=>(
+                  <div key={s} style={{display:"flex",alignItems:"center",gap:4}}>
+                    <div style={{background:i<=ci?"rgba(59,130,246,.12)":"var(--bg)",border:`1.5px solid ${i<=ci?"var(--bluemid)":"var(--border)"}`,borderRadius:999,padding:"4px 11px"}}>
+                      <span style={{fontSize:10,fontWeight:700,color:i<ci?"var(--bluemid)":i===ci?"#1E40AF":"var(--light)"}}>{i<ci?"✓ ":""}{s}</span>
+                    </div>
+                    {i<3&&<span style={{color:"var(--border)",fontSize:10}}>→</span>}
+                  </div>
+                ))}
+              </div>
+              {myProj.notes&&(
+                <div style={{marginTop:14,background:"rgba(255,255,255,.7)",border:"1px solid var(--border)",borderRadius:10,padding:"10px 13px"}}>
+                  <div style={{fontSize:10,color:"var(--bluemid)",fontWeight:700,letterSpacing:1,textTransform:"uppercase",marginBottom:3}}>📝 Update from Webus</div>
+                  <div style={{fontSize:13,color:"var(--mid)",lineHeight:1.65}}>{myProj.notes}</div>
+                </div>
+              )}
+              {myProj.link&&(
+                <a href={myProj.link} target="_blank" rel="noreferrer" className="bb" style={{display:"inline-flex",alignItems:"center",gap:7,padding:"9px 20px",borderRadius:10,fontSize:14,marginTop:14,textDecoration:"none"}}>
+                  🌐 View Live Website ↗
+                </a>
+              )}
+            </div>
+            <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:14}} className="g2">
+              <div className="dc">
+                <div style={{fontSize:11,color:"var(--bluemid)",fontWeight:700,letterSpacing:1,textTransform:"uppercase",marginBottom:12}}>📋 Project Details</div>
+                {[["Deadline",myProj.deadline||"TBD"],["Stage",myProj.stage],["Domain",myClient?.domain||"—"],["Hosting",myClient?.hosting||"—"]].map(([l,v])=>(
+                  <div key={l} style={{display:"flex",justifyContent:"space-between",padding:"6px 0",borderBottom:"1px solid var(--border)"}}>
+                    <span style={{fontSize:13,color:"var(--mid)"}}>{l}</span><span style={{fontSize:13,fontWeight:600,color:"var(--ink)"}}>{v}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="dc">
+                <div style={{fontSize:11,color:"var(--bluemid)",fontWeight:700,letterSpacing:1,textTransform:"uppercase",marginBottom:12}}>💰 Payment Summary</div>
+                {myPay?[["Total",`${myPay.cur}${myPay.amount.toLocaleString()}`,"var(--ink)"],["Paid",`${myPay.cur}${myPay.paid.toLocaleString()}`,"#059669"],["Remaining",`${myPay.cur}${(myPay.amount-myPay.paid).toLocaleString()}`,myPay.amount-myPay.paid>0?"#DC2626":"#059669"],["Status",myPay.status,"var(--bluemid)"]].map(([l,v,c])=>(
+                  <div key={l} style={{display:"flex",justifyContent:"space-between",padding:"6px 0",borderBottom:"1px solid var(--border)"}}>
+                    <span style={{fontSize:13,color:"var(--mid)"}}>{l}</span><span style={{fontSize:13,fontWeight:700,color:c}}>{v}</span>
+                  </div>
+                )):<p style={{fontSize:13,color:"var(--mid)"}}>No payment record yet.</p>}
+              </div>
+            </div>
+          </>
+        ):(
+          <div style={{textAlign:"center",padding:"44px 20px",color:"var(--mid)"}}>
+            <div style={{fontSize:48,marginBottom:12}}>🚧</div>
+            <h3 style={{fontSize:18,fontWeight:700,marginBottom:8,color:"var(--ink)"}}>Project Not Started Yet</h3>
+            <p style={{fontSize:14,marginBottom:16}}>Your project will appear here once Webus begins work. Contact us to get started!</p>
+            <a href="https://wa.me/8801700000000" target="_blank" rel="noreferrer" className="bp" style={{display:"inline-flex",padding:"11px 24px",borderRadius:10,fontSize:14,textDecoration:"none"}}>💬 Chat with Us</a>
+          </div>
+        )}
+      </div>
+    ),
+    pay:(
+      <div>
+        <h1 style={{fontSize:24,fontWeight:800,color:"var(--ink)",marginBottom:20}}>My Payments</h1>
+        {myPay?(
+          <>
+            <div style={{background:"linear-gradient(135deg,#3B82F6,#1E40AF)",borderRadius:18,padding:"24px 22px",color:"#fff",marginBottom:18,boxShadow:"0 8px 28px rgba(59,130,246,.3)"}}>
+              <div style={{fontSize:12,fontWeight:600,opacity:.8,marginBottom:4}}>Invoice {myPay.id}</div>
+              <div style={{fontSize:38,fontWeight:900,fontFamily:"'Outfit',sans-serif",marginBottom:4}}>{myPay.cur}{myPay.amount.toLocaleString()}</div>
+              <div style={{fontSize:13,opacity:.7,marginBottom:14}}>Total project amount</div>
+              <div style={{display:"flex",gap:22,flexWrap:"wrap"}}>
+                {[["PAID",`${myPay.cur}${myPay.paid.toLocaleString()}`],["REMAINING",`${myPay.cur}${(myPay.amount-myPay.paid).toLocaleString()}`],["STATUS",myPay.status]].map(([l,v])=>(
+                  <div key={l}><div style={{fontSize:10,opacity:.6,marginBottom:2}}>{l}</div><div style={{fontSize:18,fontWeight:800}}>{v}</div></div>
+                ))}
+              </div>
+            </div>
+            {myPay.status==="Paid"?(
+              <div style={{background:"rgba(16,185,129,.06)",border:"1px solid rgba(16,185,129,.2)",borderRadius:12,padding:"13px 18px",display:"flex",alignItems:"center",gap:10}}>
+                <span style={{fontSize:22}}>✅</span><div style={{fontSize:14,fontWeight:600,color:"#059669"}}>All payments completed. Thank you!</div>
+              </div>
+            ):(
+              <div style={{background:"var(--blue2)",border:"1.5px dashed var(--blue4)",borderRadius:14,padding:"16px 20px",display:"flex",justifyContent:"space-between",alignItems:"center",flexWrap:"wrap",gap:12}}>
+                <div>
+                  <div style={{fontSize:14,fontWeight:700,color:"var(--ink)",marginBottom:2}}>Outstanding: {myPay.cur}{(myPay.amount-myPay.paid).toLocaleString()}</div>
+                  <div style={{fontSize:13,color:"var(--mid)"}}>Contact us via WhatsApp to complete payment</div>
+                </div>
+                <a href="https://wa.me/8801700000000" target="_blank" rel="noreferrer" style={{padding:"10px 20px",borderRadius:9,fontSize:14,textDecoration:"none",background:"#25D366",color:"#fff",fontFamily:"'Outfit',sans-serif",fontWeight:700}}>💬 Pay via WhatsApp</a>
+              </div>
+            )}
+          </>
+        ):(
+          <div style={{textAlign:"center",padding:"40px 20px",color:"var(--mid)"}}>
+            <div style={{fontSize:40,marginBottom:12}}>💳</div>
+            <p style={{fontSize:14}}>No payment records yet.</p>
+          </div>
+        )}
+      </div>
+    ),
+    support:(
+      <div>
+        <h1 style={{fontSize:24,fontWeight:800,color:"var(--ink)",marginBottom:20}}>Support</h1>
+        <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:16,marginBottom:20}} className="g2">
+          <a href="https://wa.me/8801700000000" target="_blank" rel="noreferrer" style={{textDecoration:"none"}}>
+            <div style={{background:"linear-gradient(135deg,#25D366,#1da851)",borderRadius:16,padding:"22px 18px",color:"#fff",cursor:"pointer",boxShadow:"0 8px 24px rgba(37,211,102,.25)",transition:"transform .2s"}}
+              onMouseOver={e=>e.currentTarget.style.transform="translateY(-3px)"} onMouseOut={e=>e.currentTarget.style.transform="none"}>
+              <div style={{fontSize:30,marginBottom:8}}>💬</div>
+              <h3 style={{fontWeight:800,marginBottom:3,fontFamily:"'Outfit',sans-serif"}}>WhatsApp</h3>
+              <p style={{fontSize:13,opacity:.85}}>Fastest — reply within 1 hour</p>
+            </div>
+          </a>
+          <a href="mailto:hello@webus.agency" style={{textDecoration:"none"}}>
+            <div style={{background:"linear-gradient(135deg,#3B82F6,#1E40AF)",borderRadius:16,padding:"22px 18px",color:"#fff",cursor:"pointer",boxShadow:"0 8px 24px rgba(59,130,246,.25)",transition:"transform .2s"}}
+              onMouseOver={e=>e.currentTarget.style.transform="translateY(-3px)"} onMouseOut={e=>e.currentTarget.style.transform="none"}>
+              <div style={{fontSize:30,marginBottom:8}}>✉️</div>
+              <h3 style={{fontWeight:800,marginBottom:3,fontFamily:"'Outfit',sans-serif"}}>Email</h3>
+              <p style={{fontSize:13,opacity:.85}}>hello@webus.agency</p>
+            </div>
+          </a>
+        </div>
+        <div className="dc">
+          <h3 style={{fontSize:15,fontWeight:700,color:"var(--ink)",marginBottom:14}}>Send a Message</h3>
+          <div style={{display:"grid",gap:12}}>
+            <div><label>Subject</label><input placeholder="What do you need help with?"/></div>
+            <div><label>Message</label><textarea placeholder="Describe your question or issue..." rows={4} style={{resize:"none"}}/></div>
+          </div>
+          <button className="bb" style={{padding:"11px 26px",borderRadius:10,fontSize:14,marginTop:14}}>Send Message</button>
+        </div>
+      </div>
+    ),
+  };
+
+  return(
+    <div style={{display:"flex",minHeight:"100vh",background:"var(--bg)"}}>
+      <div style={{width:212,background:"#fff",borderRight:"1px solid var(--border)",flexShrink:0,position:"fixed",top:0,left:0,bottom:0,zIndex:100,overflowY:"auto",boxShadow:"2px 0 12px rgba(59,130,246,.07)"}} className="hm">
+        <Sidebar/>
+      </div>
+      {mob&&(
+        <div style={{position:"fixed",inset:0,zIndex:200,background:"rgba(0,0,0,.38)"}} onClick={()=>setMob(false)}>
+          <div style={{width:230,height:"100%",background:"#fff",boxShadow:"4px 0 30px rgba(0,0,0,.12)",overflowY:"auto"}} onClick={e=>e.stopPropagation()}>
+            <Sidebar onClose={()=>setMob(false)}/>
+          </div>
+        </div>
+      )}
+      <div style={{flex:1,marginLeft:212,display:"flex",flexDirection:"column"}} className="cli">
+        <style>{`@media(max-width:768px){.cli{margin-left:0!important;}}`}</style>
+        <div style={{background:"#fff",borderBottom:"1px solid var(--border)",padding:"0 22px",height:62,display:"flex",alignItems:"center",justifyContent:"space-between",position:"sticky",top:0,zIndex:50,boxShadow:"0 2px 8px rgba(59,130,246,.07)"}}>
+          <div style={{display:"flex",alignItems:"center",gap:9}}>
+            <button className="hmb3" onClick={()=>setMob(true)} style={{display:"none",background:"var(--blue2)",border:"1px solid var(--border)",borderRadius:8,padding:"6px 9px",cursor:"pointer",fontSize:18,color:"var(--bluemid)"}}>☰</button>
+            <style>{`@media(max-width:768px){.hmb3{display:flex!important;}}`}</style>
+            <span style={{fontSize:14,fontWeight:600,color:"var(--ink)"}}>{user?.name}</span>
+            <span style={{background:"rgba(59,130,246,.1)",border:"1px solid rgba(59,130,246,.25)",color:"var(--bluemid)",borderRadius:999,padding:"2px 10px",fontSize:10,fontWeight:700,letterSpacing:1,textTransform:"uppercase"}}>Client</span>
+          </div>
+          <button onClick={()=>{logout();nav("home");}} style={{background:"rgba(220,38,38,.07)",border:"1px solid rgba(220,38,38,.18)",borderRadius:8,padding:"7px 14px",color:"#DC2626",cursor:"pointer",fontSize:12,fontWeight:600}}>Logout</button>
+        </div>
+        <div style={{padding:"24px",flex:1,maxWidth:820}}>{panels[tab]}</div>
+      </div>
+    </div>
+  );
+}
+
+/* ═══ APP ROOT ═══ */
+function Public({nav}){
+  return(
+    <div>
+      <Nav nav={nav}/>
+      <Hero nav={nav}/>
+      <Services/>
+      <Portfolio/>
+      <Pricing/>
+      <Process/>
+      <Testimonials/>
+      <About/>
+      <Contact/>
+      <Footer nav={nav}/>
+      <a href="https://wa.me/8801700000000" target="_blank" rel="noreferrer"
+        style={{position:"fixed",bottom:24,right:24,zIndex:999,width:54,height:54,borderRadius:"50%",background:"#25D366",display:"flex",alignItems:"center",justifyContent:"center",fontSize:24,animation:"wglow 2s infinite",textDecoration:"none",boxShadow:"0 4px 20px rgba(37,211,102,.4)"}}>
+        💬
+      </a>
+    </div>
+  );
+}
+
+function AppCore(){
+  const {user}=useAuth();
+  const [page,setPage]=useState(()=>{
+    if(user?.role==="admin")return"admin";
+    if(user?.role==="client")return"client";
+    return"home";
+  });
+  const nav=useCallback((p)=>{
+    if(p==="admin"&&user?.role!=="admin"){setPage("login");return;}
+    if(p==="client"&&user?.role!=="client"){setPage("login");return;}
+    setPage(p);window.scrollTo(0,0);
+  },[user]);
+  if(page==="home")return<Public nav={nav}/>;
+  if(page==="login")return<Login nav={p=>{setPage(p);window.scrollTo(0,0);}}/>;
+  if(page==="admin")return user?.role==="admin"?<Admin nav={nav}/>:<Login nav={p=>setPage(p)}/>;
+  if(page==="client")return user?.role==="client"?<Client nav={nav}/>:<Login nav={p=>setPage(p)}/>;
+  return<Public nav={nav}/>;
+}
+
+function App(){return<AuthProvider><AppCore/></AuthProvider>;}
+ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+</script>
+</body>
+</html>
